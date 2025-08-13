@@ -1,80 +1,407 @@
-um<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-PT">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curso de Importação - Teste</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #f9f9f9;
-        color: #333;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso de Importação da China para Moçambique | Mussilipo Investimento</title>
+  <meta name="description" content="Aprenda a importar da China para Moçambique (Alibaba B2B, Shein e AliExpress B2C). Conteúdo completo, segurança de pagamento, grupos de apoio e acompanhamento." />
+  <meta name="keywords" content="importação, China, Moçambique, Alibaba, Shein, AliExpress, curso, logística, alfândega, pagamento seguro" />
+  <link rel="icon" href="images/favicon.png" />
+
+  <style>
+    :root{
+      --primary:#0b7bbf;
+      --primary-dark:#085d91;
+      --accent:#17a34a;
+      --accent-dark:#12883c;
+      --bg:#f6f9fc;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --warning:#ef4444;
     }
-    header {
-        background-color: #4CAF50;
-        color: white;
-        padding: 15px;
-        text-align: center;
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{
+      background:linear-gradient(120deg, var(--primary) 0%, #1f9ee8 100%);
+      color:#fff;position:relative;overflow:hidden
     }
-    main {
-        padding: 20px;
+    header .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:64px 0}
+    header .kicker{font-weight:600;opacity:.95;letter-spacing:.4px}
+    header h1{font-size:42px;line-height:1.15;margin:.25rem 0 1rem;font-weight:800}
+    header p.lead{font-size:18px;opacity:.95;margin:0 0 1.25rem}
+    .pill{display:inline-flex;gap:.5rem;align-items:center;background:rgba(255,255,255,.18);padding:.4rem .75rem;border-radius:999px;font-size:14px}
+    .cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--accent);color:#fff;padding:.85rem 1.05rem;border-radius:10px;font-weight:700;box-shadow:0 8px 24px rgba(23,163,74,.25);transition:.2s}
+    .cta:hover{background:var(--accent-dark);transform:translateY(-1px)}
+    .cta.secondary{background:rgba(255,255,255,.18);box-shadow:none}
+    .price-tag{display:flex;align-items:baseline;gap:.4rem;font-weight:800;margin:.75rem 0 1.25rem}
+    .price-tag .amt{font-size:34px}
+    .pay-badges{display:flex;gap:.6rem;flex-wrap:wrap}
+    .pay-badge{background:#fff;color:var(--primary-dark);border-radius:999px;padding:.35rem .7rem;font-weight:700}
+    .hero-img{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+    .hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, transparent, rgba(0,0,0,.15));}
+
+    section{padding:56px 0}
+    h2{font-size:28px;margin:0 0 18px}
+    .muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border-radius:14px;padding:20px;border:1px solid #e5e7eb;box-shadow:0 6px 16px rgba(0,0,0,.04)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card ul{margin:8px 0 0;padding-left:18px}
+    .badge{display:inline-block;background:#e6f4ff;color:var(--primary-dark);border:1px solid #cfe9ff;border-radius:8px;padding:.25rem .5rem;font-size:12px;font-weight:700}
+
+    .two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
+    .check{list-style:none;padding:0;margin:0}
+    .check li{padding-left:28px;position:relative;margin:.5rem 0}
+    .check li::before{content:"✓";position:absolute;left:0;top:0;color:var(--accent);font-weight:900}
+
+    .cta-block{background:linear-gradient(120deg,#1f9ee8, var(--primary));color:#fff;border-radius:14px;padding:26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+    .cta-block .buttons{display:flex;gap:10px;flex-wrap:wrap}
+
+    .faq{max-width:900px}
+    details{background:var(--card);border:1px solid #e5e7eb;border-radius:12px;padding:14px 16px;margin:10px 0}
+    details[open]{box-shadow:0 6px 16px rgba(0,0,0,.05)}
+    summary{cursor:pointer;font-weight:700}
+
+    footer{background:#0e2a3e;color:#dbe8f3;padding:28px 0;margin-top:18px}
+    footer a{color:#fff;text-decoration:underline}
+
+    .floating-wa{position:fixed;right:18px;bottom:18px;background:#22c55e;color:#fff;border-radius:999px;padding:14px 18px;font-weight:800;box-shadow:0 12px 28px rgba(34,197,94,.35);z-index:50;display:flex;align-items:center;gap:.5rem}
+    .floating-wa:hover{background:#16a34a;transform:translateY(-2px)}
+    .flag{font-size:20px;margin-left:6px}
+
+    /* responsive */
+    @media (max-width: 960px){
+      header .grid, .two-col{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
     }
-    img {
-        max-width: 100%;
-        border-radius: 8px;
+    @media (max-width: 640px){
+      header h1{font-size:32px}
+      .cards{grid-template-columns:1fr}
+      .price-tag .amt{font-size:28px}
     }
-    section {
-        background-color: white;
-        padding: 15px;
-        margin: 20px 0;
-        border-radius: 8px;
-        box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  </style>
+
+  <!-- JSON-LD para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Course",
+    "name":"Curso de Importação da China para Moçambique",
+    "description":"Curso completo cobrindo Alibaba (B2B), Shein e AliExpress (B2C), logística, alfândega, segurança de pagamento e acompanhamento.",
+    "provider":{
+      "@type":"Organization",
+      "name":"Mussilipo Investimento"
+    },
+    "offers":{
+      "@type":"Offer",
+      "price":"500",
+      "priceCurrency":"MZN",
+      "availability":"https://schema.org/InStock"
     }
-    h1, h2 {
-        margin-top: 0;
-    }
-    footer {
-        text-align: center;
-        padding: 10px;
-        background-color: #eee;
-        margin-top: 20px;
-    }
-</style>
+  }
+  </script>
 </head>
 <body>
 
-<header>
-    <h1>Curso de Importação</h1>
-    <p>Versão de teste no GitHub Pages</p>
-</header>
+  <!-- Botão flutuante WhatsApp -->
+  <a class="floating-wa" aria-label="Falar no WhatsApp"
+     href="https://wa.me/258862583032?text=Ol%C3%A1%20quero%20inscrever-me%20no%20Curso%20de%20Importa%C3%A7%C3%A3o%20da%20China%20para%20Mo%C3%A7ambique">
+     <span>WhatsApp</span>
+     <span aria-hidden="true">💬</span>
+  </a>
 
-<main>
-    <section>
-        <h2>Sobre o curso</h2>
-        <p>Aprenda a importar produtos de forma simples, legal e segura, economizando tempo e dinheiro.</p>
-        <img src="https://images.unsplash.com/photo-1545912452-8aea7e25a3d3?q=80&w=1000&auto=format&fit=crop" alt="Caixas de importação">
+  <header>
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <span class="pill">🌏🇨🇳 → 🇲🇿🌍 &nbsp; Curso Avançado de Importação</span>
+          <h1>Importe da China para Moçambique com segurança, passo a passo</h1>
+          <p class="lead">
+            Domine <strong>Alibaba (B2B)</strong>, <strong>Shein</strong> e <strong>AliExpress (B2C)</strong>, negocie com fornecedores, reduza custos de frete e passe na alfândega sem dor de cabeça.
+          </p>
+          <div class="price-tag">
+            <span class="amt">500 MT</span>
+            <span class="badge">Acesso completo</span>
+          </div>
+          <div class="pay-badges" role="group" aria-label="Formas de pagamento">
+            <span class="pay-badge">E-mola: <strong>862583032</strong></span>
+            <span class="pay-badge">M-pesa: <strong>850415578</strong></span>
+          </div>
+          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="cta"
+               href="https://wa.me/258862583032?text=Quero%20garantir%20minha%20vaga%20(500%20MT)%20no%20curso%20de%20importa%C3%A7%C3%A3o.">
+              Inscrever pelo WhatsApp
+            </a>
+            <a class="cta secondary" href="#conteudo">Ver conteúdo do curso</a>
+          </div>
+        </div>
+        <div>
+          <!-- Substitua pela sua imagem de destaque -->
+          <figure class="hero-img" aria-label="Mapa e logística internacional">
+            <img src="images/hero-import.jpg" alt="Mapa do mundo, contentores e avião simbolizando importação" />
+          </figure>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <div class="wrap two-col">
+        <div>
+          <h2>Para quem é este curso</h2>
+          <p class="muted">
+            Empreendedores, lojistas e iniciantes que querem <strong>comprar melhor</strong>, <strong>vender mais</strong> e <strong>proteger o capital</strong> ao importar da China para Moçambique.
+          </p>
+          <ul class="check">
+            <li>Comece do zero e evite erros caros.</li>
+            <li>Processo legal e documentado para alfândega.</li>
+            <li>Suporte contínuo por grupos e WhatsApp.</li>
+          </ul>
+        </div>
+        <div>
+          <!-- Imagem de apoio -->
+          <img src="images/sobre.jpg" alt="Empreendedor avaliando produtos e cotações online" />
+        </div>
+      </div>
     </section>
 
-    <section>
-        <h2>O que você vai aprender</h2>
-        <ul>
-            <li>Onde comprar no exterior</li>
-            <li>Como calcular impostos</li>
-            <li>Frete e prazos de entrega</li>
-            <li>Evitar golpes</li>
-        </ul>
+    <section id="conteudo">
+      <div class="wrap">
+        <h2>Conteúdo Programático Detalhado</h2>
+        <p class="muted">Do básico ao avançado, com foco prático no contexto moçambicano.</p>
+
+        <div class="cards" style="margin-top:12px">
+          <article class="card">
+            <h3>1) Modelos de Importação</h3>
+            <ul>
+              <li><strong>B2B (Alibaba)</strong>: fábrica direto, MOQ, amostras, personalização e contratos.</li>
+              <li><strong>B2C (Shein, AliExpress)</strong>: testes rápidos, pequenos lotes, prazos e devoluções.</li>
+              <li>Quando escolher cada modelo e como combinar estratégias.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>2) Pesquisa de Produtos</h3>
+            <ul>
+              <li>Análise de demanda local e margens.</li>
+              <li>Como evitar produtos com alto risco aduaneiro.</li>
+              <li>Checklist de viabilidade (preço, frete, prazo, qualidade).</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>3) Fornecedores Confiáveis</h3>
+            <ul>
+              <li>Verificação de perfis, certificações e histórico.</li>
+              <li>Mensagens de negociação que funcionam.</li>
+              <li>Red flags e prevenção a golpes.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>4) Negociação & Pagamento</h3>
+            <ul>
+              <li>Incoterms (FOB, CIF, DDP) na prática.</li>
+              <li>PayPal, carta de crédito, escrow, e como usar com segurança.</li>
+              <li>Controle de custos e calendário de pagamentos.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>5) Logística & Alfândega</h3>
+            <ul>
+              <li>Aéreo, marítimo e courier — prazos e custos.</li>
+              <li>Fatura comercial, packing list, certificado de origem.</li>
+              <li>Desembaraço em Moçambique e redução de atrasos.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>6) Qualidade & Devoluções</h3>
+            <ul>
+              <li>Inspeção de qualidade (pré‑embarque) e amostras.</li>
+              <li>Políticas de devolução e garantia.</li>
+              <li>Como lidar com discrepâncias de produto.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>7) Canais em Detalhe</h3>
+            <ul>
+              <li><strong>Alibaba B2B</strong>: RFQ, Trade Assurance (escrow), verificação de fábrica.</li>
+              <li><strong>Shein B2C</strong>: compras-piloto, prazos, riscos de moda sazonal.</li>
+              <li><strong>AliExpress B2C</strong>: proteção do comprador, disputas e tracking.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>8) Vendas & Marketing</h3>
+            <ul>
+              <li>WhatsApp Business, Facebook, Instagram, TikTok.</li>
+              <li>Preço final, margem e reposição de stock.</li>
+              <li>Atendimento e fidelização.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>9) Casos de Sucesso</h3>
+            <ul>
+              <li>Estudos reais: do primeiro lote ao lucro.</li>
+              <li>Erros comuns e como evitar.</li>
+              <li>Planos de ação replicáveis.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section>
-        <h2>Preço</h2>
-        <p>Versão de teste: <strong>R$ 47</strong></p>
+    <section id="seguranca">
+      <div class="wrap two-col">
+        <div>
+          <h2>Segurança de Pagamento & Proteção</h2>
+          <ul class="check">
+            <li><strong>Trade Assurance</strong> (Alibaba) e <strong>escrow</strong> para reter o valor até a confirmação.</li>
+            <li>Pagamentos rastreáveis (PayPal/carta de crédito) quando aplicável.</li>
+            <li>Confirmação de dados do fornecedor e documentação antes de pagar.</li>
+            <li>Boas práticas contra phishing e falsos intermediários.</li>
+          </ul>
+          <p class="muted">No curso, você recebe <strong>modelos de mensagens</strong>, <strong>checklists</strong> e <strong>roteiros de verificação</strong> prontos para usar.</p>
+        </div>
+        <div>
+          <img src="images/security.jpg" alt="Escudo representando segurança de pagamentos e proteção do comprador" />
+        </div>
+      </div>
     </section>
-</main>
 
-<footer>
-    &copy; 2025 Curso de Importação - Página de teste
-</footer>
+    <section id="apoio">
+      <div class="wrap two-col">
+        <div>
+          <h2>Grupos Online & Acompanhamento</h2>
+          <p>Entre para a comunidade e tenha apoio contínuo:</p>
+          <ul class="check">
+            <li><strong>Grupo exclusivo no WhatsApp/Telegram</strong> para dúvidas rápidas e networking.</li>
+            <li><strong>Mentorias de acompanhamento</strong> (em grupo e 1:1) para análise de cotações, fretes e fornecedores.</li>
+            <li>Atualizações de práticas aduaneiras e logística em Moçambique.</li>
+          </ul>
+          <div class="cta-block" role="region" aria-label="Inscrição e suporte">
+            <div>
+              <strong>Pronto para começar?</strong><br/>
+              Garanta o acesso por <u>500 MT</u> e entre nos grupos hoje mesmo.
+            </div>
+            <div class="buttons">
+              <a class="cta"
+                 href="https://wa.me/258862583032?text=Quero%20entrar%20no%20grupo%20e%20iniciar%20o%20acompanhamento.">
+                Falar no WhatsApp
+              </a>
+              <a class="cta secondary" href="#pagamento">Ver pagamentos</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="images/community.jpg" alt="Pessoas conectadas em rede compartilhando informações" />
+        </div>
+      </div>
+    </section>
 
+    <section id="pagamento">
+      <div class="wrap">
+        <h2>Pagamento Simples • 500 MT</h2>
+        <p class="muted">Confirme o pagamento e envie o comprovativo no WhatsApp para liberar seu acesso.</p>
+        <div class="cards">
+          <div class="card">
+            <h3>E‑mola</h3>
+            <p><strong>Número:</strong> 862583032</p>
+            <button class="cta" onclick="copyToClipboard('862583032')">Copiar número</button>
+          </div>
+          <div class="card">
+            <h3>M‑pesa</h3>
+            <p><strong>Número:</strong> 850415578</p>
+            <button class="cta" onclick="copyToClipboard('850415578')">Copiar número</button>
+          </div>
+          <div class="card">
+            <h3>WhatsApp (Suporte)</h3>
+            <p><strong>+258 862 583 032</strong></p>
+            <a class="cta" href="https://wa.me/258862583032?text=Enviei%20o%20pagamento%20de%20500%20MT%20e%20gostaria%20do%20acesso%20ao%20curso.">Enviar comprovativo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap faq">
+        <h2>Perguntas Frequentes</h2>
+
+        <details>
+          <summary>Quanto tempo tenho de acesso?</summary>
+          <p>O acesso é contínuo enquanto o curso estiver ativo, com atualizações e suporte nos grupos.</p>
+        </details>
+
+        <details>
+          <summary>Posso começar sem experiência?</summary>
+          <p>Sim. O curso foi desenhado para iniciantes e também agrega valor para quem já importa.</p>
+        </details>
+
+        <details>
+          <summary>Vocês ajudam a escolher fornecedores?</summary>
+          <p>Sim. No acompanhamento, analisamos perfis, propostas e condições antes do pagamento.</p>
+        </details>
+
+        <details>
+          <summary>Como são tratadas taxas e alfândega?</summary>
+          <p>Você aprende a estimar custos e preparar documentação para reduzir riscos e atrasos no desembaraço.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="cta-final">
+      <div class="wrap">
+        <div class="cta-block">
+          <div>
+            <strong>Comece hoje mesmo</strong> 🇲🇿🌍 — Domine a importação da China para Moçambique e escale o seu negócio.
+          </div>
+          <div class="buttons">
+            <a class="cta"
+               href="https://wa.me/258862583032?text=Ol%C3%A1%2C%20quero%20me%20inscrever%20no%20curso%20por%20500%20MT.">
+              Inscrever pelo WhatsApp
+            </a>
+            <a class="cta secondary" href="#conteudo">Ver módulos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>
+        <strong>Mussilipo Investimento</strong><br/>
+        Direitos autorais © <span id="y"></span>. Todos os direitos reservados.
+      </div>
+      <div>
+        Contacto WhatsApp: <a href="https://wa.me/258862583032">+258 862 583 032</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Ano automático no footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Copiar número de pagamento
+    function copyToClipboard(text){
+      navigator.clipboard.writeText(text).then(()=>{
+        alert('Número copiado: ' + text);
+      }).catch(()=>{
+        prompt('Copie o número:', text);
+      });
+    }
+  </script>
 </body>
-</html>
+    </html>
+    
