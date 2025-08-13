@@ -59,6 +59,18 @@
         .pagamento strong {
             color: #d32f2f;
         }
+        button.copy-btn {
+            margin-left: 10px;
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button.copy-btn:hover {
+            background-color: #0d47a1;
+        }
     </style>
 </head>
 <body>
@@ -70,8 +82,9 @@
 
 <section>
     <p>
-        Aprenda passo a passo a importar com segurança usando Alibaba (B2B), Shein e AliExpress (B2C). 
-        Receba suporte, grupos exclusivos e técnicas para aumentar o lucro.
+        Descubra como transformar importações em um negócio lucrativo, mesmo começando do zero.
+        Neste curso você terá acesso a técnicas comprovadas, contatos de fornecedores confiáveis e
+        métodos para vender com alto lucro no mercado moçambicano.
     </p>
 
     <h2>💰 Apenas 500 MT</h2>
@@ -90,12 +103,30 @@
     </ul>
 </section>
 
+<section>
+    <h2>✨ Benefícios do Curso</h2>
+    <ul>
+        <li>Material atualizado e vitalício.</li>
+        <li>Acesso a fornecedores confiáveis.</li>
+        <li>Suporte via WhatsApp durante 30 dias.</li>
+        <li>Garantia de satisfação: ou seu dinheiro de volta.</li>
+    </ul>
+</section>
+
 <section class="pagamento">
     <h2>💳 Pagamento e Inscrição</h2>
     <p>Invista no seu futuro por apenas 500 MT.</p>
     <ul style="list-style: none; padding: 0;">
-        <li><strong>E-mola:</strong> Alcido Armando Daniel Mussilipo — <strong>862 583 032</strong></li>
-        <li><strong>M-Pesa:</strong> Alaita Miguel — <strong>850 415 575</strong></li>
+        <li>
+            <strong>E-mola:</strong> Alcido Armando Daniel Mussilipo — 
+            <strong id="emola">862583032</strong>
+            <button class="copy-btn" onclick="copyText('emola')">Copiar</button>
+        </li>
+        <li>
+            <strong>M-Pesa:</strong> Alaita Miguel — 
+            <strong id="mpesa">850415575</strong>
+            <button class="copy-btn" onclick="copyText('mpesa')">Copiar</button>
+        </li>
     </ul>
     <p>Envie o comprovativo pelo WhatsApp: 
         <a href="https://wa.me/258862583032">+258 862 583 032</a>
@@ -105,6 +136,15 @@
 <footer>
     <p><strong>Mussilipo Investimento</strong> — Direitos autorais ©</p>
 </footer>
+
+<script>
+    function copyText(id) {
+        const text = document.getElementById(id).textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Número copiado: " + text);
+        });
+    }
+</script>
 
 </body>
 </html>
