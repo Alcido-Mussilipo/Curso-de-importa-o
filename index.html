@@ -1,17 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
-        h1 { color: #2c3e50; }
-        p { color: #34495e; }
-    </style>
-</head>
-<body>
-    <h1>Bem-vindo ao meu site!</h1>
-    <p>Este site está hospedado no GitHub Pages.</p>
-</body>
-</html>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso de Importação — Teste</title>
+
+  <!-- Estilos simples dentro do próprio HTML (pra facilitar o teste) -->
+  <style>
+    :root{
+      --bg:#0f172a;       /* slate-900 */
+      --card:#111827;     /* gray-900 */
+      --muted:#94a3b8;    /* slate-400 */
+      --primary:#22d3ee;  /* cyan-400 */
+      --accent:#a78bfa;   /* violet-400 */
+      --ok:#34d399;       /* green-400 */
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:#e5e7eb; /* gray-200 */
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.15), transparent 60%),
+                  radial-gradient(1000px 500px at 110% 10%, rgba(167,139,250,.12), transparent 60%),
+                  var(--bg);
+      line-height:1.6;
+    }
+
+    .wrap{max-width:1080px; margin:0 auto; padding:24px}
+    header{
+      position:sticky; top:0; backdrop-filter: blur(8px);
+      background:rgba(15,23,42,.6
