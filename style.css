@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    color: #333;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6a82fb;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #fc5c7d;
+}
