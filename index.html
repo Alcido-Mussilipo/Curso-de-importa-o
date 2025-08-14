@@ -9,13 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0f172a;          /* fundo escuro elegante */
-      --card:#111827;        /* cartões */
-      --accent:#22c55e;      /* verde destaque */
-      --accent-2:#06b6d4;    /* ciano */
-      --text:#e5e7eb;        /* texto claro */
-      --muted:#94a3b8;       /* texto secundário */
-      --danger:#ef4444;      /* vermelho (preço riscado) */
+      --bg:#0f172a;
+      --card:#111827;
+      --accent:#22c55e;
+      --accent-2:#06b6d4;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --danger:#ef4444;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --radius:16px;
     }
@@ -79,7 +79,6 @@
 
     footer{color:var(--muted);text-align:center;padding:26px 10px}
 
-    /* Botão flutuante WhatsApp */
     .whatsapp-float{
       position:fixed;right:18px;bottom:18px;z-index:50;
       display:flex;align-items:center;gap:10px;
@@ -90,7 +89,6 @@
     .wa-icon{width:22px;height:22px;display:inline-block}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-    /* Toast */
     .toast{
       position:fixed;left:50%;transform:translateX(-50%);bottom:90px;z-index:60;
       background:#111827; border:1px solid #22c55e66; color:var(--text);
@@ -158,7 +156,7 @@
 
       <div class="pay-row">
         <div class="pay-id">
-          <span class="pay-label">📱 M‑Pesa</span>
+          <span class="pay-label">📱 M-Pesa</span>
           <span id="mpesa-number" aria-label="Número M-Pesa">850 415 578</span>
           <span class="note">— Alaita Miguel</span>
         </div>
@@ -170,7 +168,7 @@
 
       <div class="pay-row">
         <div class="pay-id">
-          <span class="pay-label">📱 E‑Mola</span>
+          <span class="pay-label">📱 E-Mola</span>
           <span id="emola-number" aria-label="Número E-Mola">862 583 032</span>
           <span class="note">— Alcido Armando Daniel Mussilipo</span>
         </div>
@@ -195,8 +193,7 @@
 
   <script>
     // ========= WhatsApp =========
-    // Ajuste o número abaixo para o WhatsApp oficial de atendimento
-    const whatsappNumber = "258862583032"; // formato internacional sem "+"
+    const whatsappNumber = "258862583032";
     const defaultMsg = encodeURIComponent(
       "Olá! Tenho interesse no Curso de Importação (promo de 1000Mt por 500Mt). Pode enviar detalhes?"
     );
@@ -215,7 +212,6 @@
 
     function copyText(text, outEl){
       if (!navigator.clipboard) {
-        // fallback
         const ta = document.createElement('textarea');
         ta.value = text;
         document.body.appendChild(ta);
@@ -228,7 +224,6 @@
       showToast("Copiado!");
     }
 
-    // Botões "Copiar número"
     document.querySelectorAll('button.btn.copy[data-copy]').forEach(btn=>{
       btn.addEventListener('click', ()=>{
         const sel = btn.getAttribute('data-copy');
@@ -239,7 +234,6 @@
       });
     });
 
-    // Botão "Copiar todos os dados"
     document.querySelectorAll('button.btn.copy[data-copy-all]').forEach(btn=>{
       btn.addEventListener('click', ()=>{
         const mpesa = document.getElementById('mpesa-number').textContent.replace(/\s+/g,' ').trim();
@@ -253,7 +247,6 @@ Direitos: Mussilipo Investimento`;
       });
     });
 
-    // Ano no rodapé
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
