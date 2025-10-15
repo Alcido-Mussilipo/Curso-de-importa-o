@@ -1,247 +1,167 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Curso de Importação da China para Moçambique</title>
-  <meta name="description" content="Curso prático para importar da China (AliExpress, Alibaba, Shein) para Moçambique. Aprenda do zero ao lucro. Promoção: primeiras 10 pessoas 500Mt, depois 1000Mt." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso de Importação 🇨🇳➡️🇲🇿</title>
   <style>
-    :root{
-      --bg:#0f172a;
-      --card:#111827;
-      --accent:#22c55e;
-      --accent-2:#06b6d4;
-      --text:#e5e7eb;
-      --muted:#94a3b8;
-      --danger:#ef4444;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius:16px;
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: #222;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1223 0%, #0f172a 100%);color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:32px 20px}
-    header{
-      display:grid;gap:18px;align-items:center;justify-items:center;text-align:center;
-      padding:42px 20px 10px 20px;
-    }
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:#0ea5e933;color:#7dd3fc;font-weight:600;font-size:12px;border:1px solid #0ea5e980}
-    h1{font-size:clamp(28px,4vw,46px);line-height:1.1;margin:6px 0 0 0}
-    .sub{color:var(--muted);max-width:800px}
 
-    .hero-card{
-      margin-top:24px;background:radial-gradient(80% 120% at 0% 0%, #22c55e22 0%, transparent 60%), var(--card);
-      border:1px solid #22c55e33;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);
-      display:grid;grid-template-columns:1.2fr .8fr;gap:22px;
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), 
+                  url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
     }
-    @media (max-width:900px){.hero-card{grid-template-columns:1fr}}
-    .price{
-      display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:8px 0 2px 0
-    }
-    .old{color:var(--danger);text-decoration:line-through;opacity:.8;font-weight:600}
-    .now{background:linear-gradient(90deg,var(--accent),#16a34a);padding:10px 16px;border-radius:12px;font-weight:800;color:#052e1a}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    .btn{
-      padding:12px 18px;border-radius:12px;border:1px solid #ffffff22;background:#ffffff0d;
-      color:var(--text);font-weight:700;cursor:pointer;transition:transform .05s ease, background .2s ease, border .2s ease
-    }
-    .btn:hover{transform:translateY(-1px);background:#ffffff14;border-color:#ffffff33}
-    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#052e1a;border:none}
-    .btn.copy{display:inline-flex;align-items:center;gap:8px}
-    .note{font-size:12px;color:var(--muted)}
 
-    .grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px
+    .top-banner {
+      background: #ff4747;
+      color: white;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 0.7rem 1rem;
+      font-size: 1.3rem;
+      animation: pulse 2s infinite;
     }
-    @media (max-width:900px){.grid{grid-template-columns:1fr}}
-    .card{
-      background:var(--card);border:1px solid #ffffff12;border-radius:16px;padding:18px;box-shadow:var(--shadow)
-    }
-    .card h3{margin:0 0 10px 0}
-    .list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
-    .list li{display:flex;gap:10px;align-items:flex-start}
-    .tick{font-weight:700}
 
-    .payments{
-      background:linear-gradient(180deg,#111827 0%, #0b1223 100%);
-      border:1px solid #22c55e33;border-radius:16px;padding:18px;margin-top:22px;box-shadow:var(--shadow)
+    @keyframes pulse {
+      0%, 100% { background-color: #ff4747; }
+      50% { background-color: #ff6b6b; }
     }
-    .pay-row{
-      display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between;border-bottom:1px dashed #ffffff20;padding:10px 0
-    }
-    .pay-row:last-child{border-bottom:none}
-    .pay-id{display:flex;align-items:center;gap:10px}
-    .pay-label{font-weight:700}
-    .copy-group{display:flex;gap:8px;align-items:center}
-    .copy-out{font-size:12px;color:var(--muted);min-width:90px}
 
-    footer{color:var(--muted);text-align:center;padding:26px 10px}
-
-    .whatsapp-float{
-      position:fixed;right:18px;bottom:18px;z-index:50;
-      display:flex;align-items:center;gap:10px;
-      background:#25D366;color:#062b13;border-radius:999px;padding:12px 16px;
-      box-shadow:0 10px 20px rgba(0,0,0,.35);font-weight:800
+    header h1 {
+      font-size: 2rem;
+      margin: 1rem 0;
     }
-    .whatsapp-float:hover{filter:brightness(1.05);transform:translateY(-1px)}
-    .wa-icon{width:22px;height:22px;display:inline-block}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
-    .toast{
-      position:fixed;left:50%;transform:translateX(-50%);bottom:90px;z-index:60;
-      background:#111827; border:1px solid #22c55e66; color:var(--text);
-      padding:10px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s ease
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
     }
-    .toast.show{opacity:1}
+
+    .price {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      display: inline-block;
+      margin: 1rem 0;
+    }
+
+    .price span {
+      display: block;
+      font-weight: 600;
+    }
+
+    .price .old {
+      text-decoration: line-through;
+      color: #999;
+    }
+
+    .price .now {
+      color: #00c853;
+      font-size: 1.3rem;
+    }
+
+    .cta {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.3s;
+      text-align: center;
+      width: 80%;
+      max-width: 320px;
+    }
+
+    .btn.primary {
+      background: #00c853;
+      color: white;
+    }
+
+    .btn.primary:hover {
+      background: #00a243;
+    }
+
+    .btn.secondary {
+      background: #1976d2;
+      color: white;
+    }
+
+    .btn.secondary:hover {
+      background: #125da0;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #00c853;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 3rem 1rem;
+      }
+      header h1 {
+        font-size: 1.7rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Botão flutuante -->
-  <a id="whatsappFloat" class="whatsapp-float" 
-     href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(promo%C3%A7%C3%A3o%20para%20as%20primeiras%2010%20pessoas%3A%20500Mt%20%E2%86%92%20depois%201000Mt).%20Pode%20enviar%20detalhes%3F" 
-     target="_blank" rel="noopener">
-    <span class="wa-icon" aria-hidden="true">💬</span>
-    <span>Falar no WhatsApp</span>
-  </a>
+  <div class="top-banner">🚨 VAGAS LIMITADAS! GARANTA SUA INSCRIÇÃO AGORA!</div>
 
-  <div id="toast" class="toast">Copiado!</div>
+  <header>
+    <h1>Curso de Importação 🇨🇳➡️🇲🇿</h1>
+    <p>Aprenda a importar da China (AliExpress, Alibaba, Shein) e transformar isso em lucro!</p>
 
-  <div class="container">
-    <header>
-      <span class="badge">🚀 Promoção limitada</span>
-      <h1>Curso de Importação da <span style="white-space:nowrap">China 🇨🇳</span> para Moçambique 🇲🇿</h1>
-      <p class="sub">Aprenda a comprar com segurança no <strong>AliExpress</strong>, <strong>Alibaba</strong> e <strong>Shein</strong>, calcular custos, evitar golpes e lucrar na revenda no mercado moçambicano.</p>
+    <div class="price" aria-label="Preço promocional">
+      <span class="now">Primeiras 10 pessoas: 500Mt</span>
+      <span class="old">Depois de esgotado: 1000Mt</span>
+    </div>
 
-      <div class="hero-card">
-        <div>
-          <div class="price" aria-label="Preço promocional">
-            <span class="old">Depois de esgotado: 1000Mt</span>
-            <span class="now">Primeiras 10 pessoas: 500Mt</span>
-          </div>
-          <div class="cta">
-            <a class="btn primary" id="ctaWhatsApp" 
-               href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(promo%C3%A7%C3%A3o%20para%20as%20primeiras%2010%20pessoas%3A%20500Mt%20%E2%86%92%20depois%201000Mt).%20Pode%20enviar%20detalhes%3F" 
-               target="_blank" rel="noopener">Quero garantir minha vaga ✨</a>
-            <a href="#pagamentos" class="btn">Ver formas de pagamento 💳</a>
-          </div>
-          <p class="note">🏷️ Vagas limitadas. Após confirmação do pagamento, envio imediato do acesso.</p>
-        </div>
-        <div class="card">
-          <h3>O que você vai aprender 📚</h3>
-          <ul class="list">
-            <li><span class="tick">✅</span> Criar contas e comprar no AliExpress, Alibaba (atacado) e Shein</li>
-            <li><span class="tick">✅</span> Identificar fornecedores confiáveis e negociar como um profissional</li>
-            <li><span class="tick">✅</span> Escolher entre frete aéreo ou marítimo e calcular prazos</li>
-            <li><span class="tick">✅</span> Desembaraço aduaneiro em Moçambique sem dor de cabeça</li>
-            <li><span class="tick">✅</span> Formar preço de venda e aumentar sua margem de lucro</li>
-          </ul>
-        </div>
-      </div>
-    </header>
+    <div class="cta">
+      <a class="btn primary" id="ctaWhatsApp"
+        href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(promo%C3%A7%C3%A3o%20para%20as%20primeiras%2010%20pessoas%3A%20500Mt%20%E2%86%92%20depois%201000Mt).%20Pode%20enviar%20detalhes%3F"
+        target="_blank" rel="noopener">💬 Quero garantir minha vaga</a>
 
-    <section class="grid" aria-label="Benefícios">
-      <div class="card">
-        <h3>💰 Mais lucro</h3>
-        <p>Compre barato direto da origem e revenda com margem inteligente.</p>
-      </div>
-      <div class="card">
-        <h3>🛡️ Segurança</h3>
-        <p>Evite golpes e atrasos com checklist e fornecedores verificados.</p>
-      </div>
-      <div class="card">
-        <h3>📦 Logística simples</h3>
-        <p>Passo a passo para receber encomendas em Moçambique sem complicações.</p>
-      </div>
-    </section>
+      <a href="#pagamentos" class="btn secondary">💳 Ver formas de pagamento</a>
 
-    <section id="pagamentos" class="payments" aria-labelledby="pagamentos-titulo">
-      <h2 id="pagamentos-titulo" style="margin:0 0 10px 0">💵 Formas de pagamento</h2>
+      <p style="color:#fff; margin-top:1rem; font-size:0.95rem;">
+        📧 Apoio: <a href="mailto:mussilipoinvestimento09@gmail.com" style="color:#00e676;">mussilipoinvestimento09@gmail.com</a>
+      </p>
+    </div>
+  </header>
 
-      <div class="pay-row">
-        <div class="pay-id">
-          <span class="pay-label">📱 M-Pesa</span>
-          <span id="mpesa-number" aria-label="Número M-Pesa">850 415 578</span>
-          <span class="note">— Alaita Miguel</span>
-        </div>
-        <div class="copy-group">
-          <button class="btn copy" data-copy="#mpesa-number">Copiar número</button>
-          <span class="copy-out" aria-live="polite" data-out="#mpesa-number"></span>
-        </div>
-      </div>
+  <footer>
+    <p>© 2025 Mussilipo Investimentos | Todos os direitos reservados</p>
+  </footer>
 
-      <div class="pay-row">
-        <div class="pay-id">
-          <span class="pay-label">📱 E-Mola</span>
-          <span id="emola-number" aria-label="Número E-Mola">862 583 032</span>
-          <span class="note">— Alcido Armando Daniel Mussilipo</span>
-        </div>
-        <div class="copy-group">
-          <button class="btn copy" data-copy="#emola-number">Copiar número</button>
-          <span class="copy-out" aria-live="polite" data-out="#emola-number"></span>
-        </div>
-      </div>
-
-      <p class="note" style="margin-top:12px">🏢 Direitos: <strong>Mussilipo Investimento</strong></p>
-
-      <div class="cta" style="margin-top:14px">
-        <button class="btn copy" data-copy-all="true">Copiar todos os dados</button>
-        <a class="btn primary" id="ctaWhatsApp2" 
-           href="https://wa.me/258862583032?text=Ol%C3%A1!%20Envio%20o%20comprovativo%20do%20pagamento%20do%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(promo%C3%A7%C3%A3o%20para%20as%20primeiras%2010%20pessoas%3A%20500Mt%20%E2%86%92%20depois%201000Mt)." 
-           target="_blank" rel="noopener">Enviar comprovativo no WhatsApp 📲</a>
-      </div>
-    </section>
-
-    <footer>
-      <p>© <span id="year"></span> Curso de Importação — Todos os direitos reservados. Mussilipo Investimento.</p>
-    </footer>
-  </div>
-
-  <script>
-    // Copiar para área de transferência
-    const toast = document.getElementById("toast");
-    const showToast = (text="Copiado!") => {
-      toast.textContent = text;
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 1400);
-    };
-    function copyText(text, outEl){
-      if (!navigator.clipboard) {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select(); document.execCommand('copy');
-        document.body.removeChild(ta);
-      } else {
-        navigator.clipboard.writeText(text);
-      }
-      if (outEl) outEl.textContent = "✔ Copiado";
-      showToast("Copiado!");
-    }
-    document.querySelectorAll('button.btn.copy[data-copy]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const sel = btn.getAttribute('data-copy');
-        const target = document.querySelector(sel);
-        const outSel = btn.parentElement.querySelector('.copy-out');
-        const text = target ? target.textContent.replace(/\s+/g,' ').trim() : '';
-        copyText(text, outSel);
-      });
-    });
-    document.querySelectorAll('button.btn.copy[data-copy-all]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const mpesa = document.getElementById('mpesa-number').textContent.replace(/\s+/g,' ').trim();
-        const emola = document.getElementById('emola-number').textContent.replace(/\s+/g,' ').trim();
-        const payload =
-`Formas de pagamento – Curso de Importação
-M-Pesa: ${mpesa} (Alaita Miguel)
-E-Mola: ${emola} (Alcido Armando Daniel Mussilipo)
-Direitos: Mussilipo Investimento`;
-        copyText(payload, btn.nextElementSibling);
-      });
-    });
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
