@@ -23,7 +23,7 @@
     html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1223 0%, #0f172a 100%);color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     a{color:inherit;text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:32px 20px}
-    
+
     /* Banner vagas limitadas */
     .limited-banner {
       background: linear-gradient(90deg,#ef4444,#f87171);
@@ -121,8 +121,8 @@
   <div class="limited-banner">🚨 VAGAS LIMITADAS! GARANTA SUA VAGA AGORA! 🚨</div>
 
   <!-- Botão flutuante -->
-  <a id="whatsappFloat" class="whatsapp-float" 
-     href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(primeiras%2010%20pessoas%20500Mt%20%E2%86%92%20depois%201000Mt).%20Pode%20enviar%20detalhes?" 
+  <a id="whatsappFloat" class="whatsapp-float"
+     href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(primeiras%2010%20pessoas%20500Mt%20%E2%86%92%20depois%201000Mt).%20Pode%20enviar%20detalhes?"
      target="_blank" rel="noopener">
     <span class="wa-icon" aria-hidden="true">💬</span>
     <span>Falar no WhatsApp</span>
@@ -143,8 +143,8 @@
             <span class="old">Depois de esgotado: 1000Mt</span>
           </div>
           <div class="cta">
-            <a class="btn primary" id="ctaWhatsApp" 
-               href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(primeiras%2010%20pessoas%20500Mt%20%E2%86%92%20depois%201000Mt).%20Pode%20enviar%20detalhes?" 
+            <a class="btn primary" id="ctaWhatsApp"
+               href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(primeiras%2010%20pessoas%20500Mt%20%E2%86%92%20depois%201000Mt).%20Pode%20enviar%20detalhes?"
                target="_blank" rel="noopener">Quero garantir minha vaga ✨</a>
             <a href="#pagamentos" class="btn">Ver formas de pagamento 💳</a>
             <p class="note" style="margin-top:6px;">📧 Apoio: <a href="mailto:mussilipoinvestimento09@gmail.com" style="color:#22c55e;">mussilipoinvestimento09@gmail.com</a></p>
@@ -210,9 +210,19 @@
 
       <div class="cta" style="margin-top:14px">
         <button class="btn copy" data-copy-all="true">Copiar todos os dados</button>
-        <a class="btn primary" id="ctaWhatsApp2" 
-           href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(primeiras%2010%20pessoas%20500Mt%20%E2%86%92%20depois%201000Mt).%20Pode%20enviar%20detalhes?" 
-           target="_blank" rel="noopener">Enviar comprovativo no WhatsApp 📲</a>
+
+        <a class="btn primary" id="ctaWhatsApp2"
+           href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(primeiras%2010%20pessoas%20500Mt%20%E2%86%92%20depois%201000Mt).%20Pode%20enviar%20detalhes?"
+           target="_blank" rel="noopener">
+           Enviar comprovativo no WhatsApp 📲
+        </a>
+
+        <!-- ✅ Novo botão para envio por email -->
+        <a class="btn"
+           href="https://forms.gle/1Rb4SjSS4pBDmxor7"
+           target="_blank" rel="noopener">
+           Enviar comprovativo por Email 📧
+        </a>
       </div>
     </section>
 
@@ -222,6 +232,9 @@
   </div>
 
   <script>
+    // Atualiza o ano automaticamente
+    document.getElementById("year").textContent = new Date().getFullYear();
+
     // Copiar para área de transferência
     const toast = document.getElementById("toast");
     const showToast = (text="Copiado!") => {
@@ -253,4 +266,12 @@
     });
     document.querySelectorAll('button.btn.copy[data-copy-all]').forEach(btn=>{
       btn.addEventListener('click', ()=>{
-        const mp
+        const mpesa = document.querySelector('#mpesa-number').textContent.trim();
+        const emola = document.querySelector('#emola-number').textContent.trim();
+        const allText = `M-Pesa: ${mpesa} — Alaita Miguel\nE-Mola: ${emola} — Alcido Armando Daniel Mussilipo`;
+        copyText(allText);
+      });
+    });
+  </script>
+</body>
+</html>
