@@ -7,108 +7,65 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#12021a;
+      --bg:#12021a; 
       --card:#1a0b2a;
-      --accent:#7b2cff;
+      --accent:#7b2cff; 
       --muted:#cfc6e6;
-      --glass: rgba(255,255,255,0.05);
+      --glass: rgba(255,255,255,0.04);
       --maxw:1100px;
+      --color-tech:#ff6b6b; /* vermelho vibrante */
+      --color-fashion:#feca57; /* amarelo chamativo */
+      --color-beauty:#48dbfb; /* azul claro */
+      --color-sport:#1dd1a1; /* verde vivo */
     }
-    *{box-sizing:border-box;font-family:Inter,system-ui,Arial}
+    *{box-sizing:border-box;font-family:Inter,system-ui,Arial,Helvetica,sans-serif}
     html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg) 0%, #0f0220 100%);color:var(--muted)}
-    .container{max-width:var(--maxw);margin:20px auto;padding:16px}
-
-    /* TOPO FIXO */
-    .top-bar{
-      width:100%;
-      background:linear-gradient(135deg,var(--accent),#5e33ff);
-      padding:14px;
-      color:white;
-      text-align:center;
-      font-weight:700;
-      font-size:18px;
-      position:sticky;
-      top:0;
-      z-index:9999;
-      border-bottom:2px solid rgba(255,255,255,0.15);
-    }
-
-    header{display:flex;gap:18px;align-items:center;margin-top:18px}
-    .logo{background:linear-gradient(135deg,var(--accent),#5e33ff);padding:12px;border-radius:10px;color:white;font-weight:800;font-size:18px}
-
-    h1{font-size:24px;margin:0}
-    p.lead{color:#e9e1ff;margin-top:6px;font-size:15px}
-
-    .hero{display:grid;grid-template-columns:1fr 350px;gap:20px;margin-top:20px}
-
-    .card{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.03));border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
-
+    .container{max-width:var(--maxw);margin:40px auto;padding:28px}
+    header{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+    .logo{background:linear-gradient(135deg,var(--accent),#5e33ff);padding:12px;border-radius:10px;color:white;font-weight:800;font-size:20px;width:100%;text-align:center}
+    h1{font-size:26px;margin:0}
+    p.lead{color:#e9e1ff;margin-top:6px;font-size:14px}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:20px}
+    .card{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.5)}
     .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
     .feature{background:var(--glass);padding:12px;border-radius:10px}
-
     .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .btn{background:var(--accent);border:none;color:white;padding:12px 16px;border-radius:10px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
-    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.15)}
-
+    .btn{background:var(--accent);border:none;color:white;padding:12px 16px;border-radius:10px;font-weight:600;cursor:pointer;text-decoration:none;transition:transform 0.2s}
+    .btn:hover{transform:scale(1.05)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
     .right-card{display:flex;flex-direction:column;gap:12px;align-items:stretch}
-
     .sec{margin-top:22px}
     .grid-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:14px}
-    .section-card{background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));padding:14px;border-radius:12px}
+    .section-card{padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.5);color:white;transition:transform 0.2s}
+    .section-card:hover{transform:translateY(-5px)}
     .section-card h3{margin:0 0 8px 0}
-    .section-card p{margin:0 0 12px 0;color:#e6ddff}
-    .section-card ul{padding-left:18px}
-    .section-card li{margin-bottom:6px}
-
-    footer{margin-top:30px;padding:12px;text-align:center;color:#cfc6e6;opacity:0.9;font-size:14px}
-
-    /* FLOATING BETTER BUTTON */
-    .whats-float{position:fixed;right:20px;bottom:22px;z-index:9999}
-    .whats-btn{
-      width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-      background:linear-gradient(135deg,#25D366,#128C7E);
-      box-shadow:0 8px 35px rgba(37,211,102,0.45);
-      border:3px solid rgba(255,255,255,0.1);
-      transition:0.2s ease;
-    }
-    .whats-btn:hover{transform:scale(1.08)}
-    .whats-btn svg{width:40px;height:40px}
-
-    .pill{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.1);border-radius:999px;color:#f3eefe;font-weight:600}
-
+    .section-card p{margin:0 0 12px 0;font-size:14px}
+    .section-card.tech{background:linear-gradient(135deg,#ff6b6b,#ff4757)}
+    .section-card.fashion{background:linear-gradient(135deg,#feca57,#ff9f1a); color:#12021a}
+    .section-card.beauty{background:linear-gradient(135deg,#48dbfb,#1e90ff)}
+    .section-card.sport{background:linear-gradient(135deg,#1dd1a1,#10ac84)}
+    footer{margin-top:30px;padding:12px;text-align:center;color:#cfc6e6;opacity:0.9;font-size:13px}
+    .whats-float{position:fixed;right:18px;bottom:18px;z-index:999}
+    .whats-btn{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(123,44,255,0.5);background:linear-gradient(135deg,#25D366,#128C7E);border:4px solid rgba(255,255,255,0.06);transition:transform 0.2s}
+    .whats-btn:hover{transform:scale(1.2) rotate(10deg);}
+    .whats-btn img{width:36px;height:36px}
+    .section-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .small{font-size:13px;padding:8px 10px}
+    .pill{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.2);border-radius:999px;color:white;font-weight:600;font-size:13px;transition:background 0.2s}
+    .pill:hover{background:rgba(255,255,255,0.35)}
+    .payment{background:linear-gradient(90deg, rgba(123,44,255,0.12), rgba(255,255,255,0.02));padding:12px;border-radius:10px;margin-top:12px}
+    .owners{font-size:13px;opacity:0.9}
     @media (max-width:880px){
       .hero{grid-template-columns:1fr}
       .grid-sections{grid-template-columns:1fr}
-      h1{font-size:20px}
       .right-card{order:-1}
     }
   </style>
 </head>
 <body>
-
-<!-- SEÇÃO SAÚDE & BELEZA -->
-<section style="text-align:center; padding:20px; background:#ffdde6; border-bottom:4px solid #ff4fa3;">
-  <h2 style="font-size:24px; margin-bottom:10px; color:#8a0059; font-weight:800;">Saúde & Beleza</h2>
-  <img src="/mnt/data/WhatsApp Image 2025-11-29 at 09.39.42.jpeg" alt="Saúde e Beleza" style="max-width:90%; border-radius:18px; box-shadow:0 4px 15px rgba(0,0,0,0.35);" />
-</section>
-
-<!-- SEÇÃO ACESSÓRIOS -->
-<section style="text-align:center; padding:20px; background:#d9ecff; border-bottom:4px solid #3399ff;">
-  <h2 style="font-size:24px; margin-bottom:10px; color:#003366; font-weight:800;">Acessórios</h2>
-  <img src="/mnt/data/WhatsApp Image 2025-11-29 at 09.39.39.jpeg" alt="Acessórios" style="max-width:90%; border-radius:18px; box-shadow:0 4px 15px rgba(0,0,0,0.35);" />
-</section>
-
-<!-- SEÇÃO MODA E VESTUÁRIO -->
-<section style="text-align:center; padding:20px; background:#ffe8fa; border-bottom:4px solid #ff5bcd;">
-  <h2 style="font-size:24px; margin-bottom:10px; color:#7a0062; font-weight:800;">Moda & Vestuário</h2>
-  <img src="/mnt/data/WhatsApp Image 2025-11-29 at 09.39.47.jpeg" alt="Moda e Vestuário" style="max-width:90%; border-radius:18px; box-shadow:0 4px 15px rgba(0,0,0,0.35);" />
-</section>
-
-<div class="top-bar">MUSSILIPO INVESTIMENTO</div>>MUSSILIPO INVESTIMENTO</div>
-
   <div class="container">
     <header>
-      <div class="logo">MUSSILIPO</div>
+      <div class="logo">MUSSILIPO INVESTIMENTO</div>
       <div>
         <h1>Catálogos & Encomendas — Acessórios, Tecnologia, Moda, Beleza e mais</h1>
         <p class="lead">📦 Importamos o que quiseres • Entregas seguras • Pagamento fácil — E-mola: <strong>862583032</strong></p>
@@ -117,13 +74,13 @@
 
     <div class="hero">
       <div class="card">
-        <h2>🎯 Tens tudo num só lugar</h2>
-        <p>Produtos importados: acessórios & tecnologias, moda, saúde & beleza, desporto e muito mais. Encomendas rápidas com fornecedores verificados.</p>
+        <h2>🎯 Atenção — Tens tudo num só lugar</h2>
+        <p>Somos a tua porta de entrada para produtos importados: acessórios & tecnologias, moda, saúde & beleza, desporto e muito mais. Pedidos por encomenda com fornecedores verificados e entrega rastreada.</p>
 
         <div class="features">
-          <div class="feature"><strong>🚀 Rápido</strong><div class="small">Processamento ágil e atendimento direto via WhatsApp</div></div>
-          <div class="feature"><strong>🔒 Seguro</strong><div class="small">Produtos verificados antes da expedição</div></div>
-          <div class="feature"><strong>💸 Pagamento</strong><div class="small">E-mola: <strong>862583032</strong></div></div>
+          <div class="feature"><strong>🚀 Rápido</strong><div class="small">Processamento ágil e comunicação direta via WhatsApp</div></div>
+          <div class="feature"><strong>🔒 Seguro</strong><div class="small">Produtos verificados antes do envio</div></div>
+          <div class="feature"><strong>💸 Pagamento</strong><div class="small">E-mola disponível: <strong>862583032</strong></div></div>
           <div class="feature"><strong>📦 Variedade</strong><div class="small">Importamos quase tudo por encomenda</div></div>
         </div>
 
@@ -132,22 +89,29 @@
           <a class="btn ghost" href="#catalogos">Ver Catálogos</a>
         </div>
 
-        <div class="card" style="margin-top:12px">
+        <div class="payment">
           <strong>💳 Método de Pagamento</strong>
-          <p style="margin:8px 0 0 0">E-mola: <strong>862583032</strong><br/>Titular: <strong>Alcido Armando Daniel Mussilipo</strong></p>
+          <p style="margin:8px 0 0 0">E-mola: <strong>862583032</strong> — Titular: <strong>Alcido Armando Daniel Mussilipo</strong></p>
         </div>
       </div>
 
       <aside class="right-card">
         <div class="card">
           <h3>📣 Oferta</h3>
-          <p>Reservas com entrada • Descontos para compras por atacado. Envia o link e recebes orçamento em 24h.</p>
-          <a class="btn small" href="https://wa.me/258871828517?text=Quero+or%C3%A7amento">Pedir Orçamento</a>
+          <p style="margin:6px 0">Reservas com entrada — Descontos para compras por atacado. Envia o link do produto e recebes orçamento em 24h.</p>
+          <div class="section-actions">
+            <a class="btn small" href="https://wa.me/258871828517?text=Quero+or%C3%A7amento+para+importa%C3%A7%C3%A3o">Pedir Orçamento</a>
+            <a class="btn small ghost" href="#metodo">Como Pagar</a>
+          </div>
         </div>
 
         <div class="card">
           <h3>📞 Contactos</h3>
-          <p class="small">WhatsApp: +258 87 182 8517<br/>Email: <strong>alcidomussilipo09@gmail.com</strong><br/>Titular E-mola: Alcido Mussilipo</p>
+          <p class="small">
+            WhatsApp: +258 87 182 8517<br/>
+            Email: <a href="mailto:alcidomussilipo09@gmail.com" style="color:#f3eefe;text-decoration:underline">alcidomussilipo09@gmail.com</a><br/>
+            Titular E-mola: Alcido Armando Daniel Mussilipo
+          </p>
           <a class="btn small" href="https://wa.me/258871828517?text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es">Falar agora</a>
         </div>
       </aside>
@@ -156,20 +120,90 @@
     <main id="catalogos">
       <section class="sec">
         <h2>📚 Catálogos Disponíveis</h2>
-        <p class="small">Escolhe a categoria e manda o produto que queres — importamos por encomenda.</p>
+        <p class="small">Escolhe a categoria e manda o produto que queres — trazemos por encomenda.</p>
 
         <div class="grid-sections">
-
-          <div class="section-card">
+          <div class="section-card tech">
             <h3>🔌 Acessórios & Tecnologia</h3>
-            <p>Capas, cabos, fones, smartwatches, powerbanks, projetores e gadgets modernos.</p>
             <ul>
               <li>Últimos gadgets e acessórios em promoção 🎧</li>
-              <li>Produtos testados e fornecedores verificados</li>
-              <li>Modelos originais e opções económicas</li>
-              <li><a class="pill" href="https://wa.me/258871828517?text=Quero+acess%C3%B3rios+tecnologia">Pedir Orçamento</a></li>
+              <li>Produtos testados e fornecedores verificados.</li>
+              <li>Modelos originais e alternativas económico/premium.</li>
+              <li><a class="pill" href="https://wa.me/258871828517?text=Quero+um+acess%C3%B3rio+%26+tecnologia">Pedir Orçamento</a></li>
             </ul>
           </div>
 
-          <div class="section-card">
-            <h3>👗 Moda & Vestuário
+          <div class="section-card fashion">
+            <h3>👗 Moda & Vestuário</h3>
+            <ul>
+              <li>Peças únicas e tendências internacionais ✨</li>
+              <li>Fotos reais e descrição completa.</li>
+              <li>Opções premium e económicas.</li>
+              <li><a class="pill" href="https://wa.me/258871828517?text=Quero+roupa+por+encomenda">Solicitar Produto</a></li>
+            </ul>
+          </div>
+
+          <div class="section-card beauty">
+            <h3>💄 Saúde, Beleza & Cosmética</h3>
+            <ul>
+              <li>Produtos originais e lacrados 💎</li>
+              <li>Ingredientes & benefícios detalhados.</li>
+              <li>Kits e descontos para clientes regulares.</li>
+              <li><a class="pill" href="https://wa.me/258871828517?text=Quero+cosm%C3%A9ticos">Pedir Agora</a></li>
+            </ul>
+          </div>
+
+          <div class="section-card sport">
+            <h3>🏅 Desporto</h3>
+            <ul>
+              <li>Equipamentos profissionais e amadores ⚽</li>
+              <li>Tamanhos e specs técnicos disponíveis.</li>
+              <li>Preços competitivos para compras em atacado.</li>
+              <li><a class="pill" href="https://wa.me/258871828517?text=Quero+material+de+desporto">Pedir Cotação</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="card">
+          <h3 id="metodo">💳 Método de Pagamento & Segurança</h3>
+          <p>Nós aceitamos pagamentos via <strong>E-mola</strong>. Para efetuar o pagamento, usa os dados abaixo:</p>
+          <p class="small"><strong>E-mola:</strong> <strong>862583032</strong><br/>Titular: <strong>Alcido Armando Daniel Mussilipo</strong></p>
+          <p style="margin-top:8px">Depois do pagamento, envia o comprovante no WhatsApp. Reservas com entrada são aceites para garantir stock e acelerar a importação.</p>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="card">
+          <h3>🧭 Como Pedir (passo a passo)</h3>
+          <ol>
+            <li>Envia foto ou link do produto pelo WhatsApp.</li>
+            <li>Indica modelo, cor, tamanho e quantidade.</li>
+            <li>Recebe o orçamento final com prazo de entrega.</li>
+            <li>Confirma com entrada (se aplicável) e envia comprovante.</li>
+            <li>Recebe rastreamento e entrega local.</li>
+          </ol>
+          <p class="small">Dúvidas? Clica em <a class="pill" href="https://wa.me/258871828517?text=Tenho+uma+duvida+sobre+o+processo">Falar com Suporte</a></p>
+        </div>
+      </section>
+
+      <section class="sec">
+        <div class="card">
+          <h3>⚖ Direito e Propriedade</h3>
+          <p class="owners">Todos os conteúdos e catálogos aqui apresentados estão sob o direito de <strong>Mussilipo Investimento</strong>. Qualquer reprodução ou uso comercial sem autorização é proibido.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <strong>Mussilipo Investimento</strong> — Contacto WhatsApp: +258 87 182 8517 • Email: alcidomussilipo09@gmail.com • E-mola 862583032 • Titular: Alcido Armando Daniel Mussilipo</div>
+    </footer>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <div class="whats-float" aria-hidden="false">
+    <a class="whats-btn" href="https://wa.me/258871828517?text=Ol%C3%A1%20Mussilipo%2C%20gostaria%20de%20informações" target="_blank" rel="noopener">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.52 3.48C18.21 1.17 15.02 0 11.7 0 5.39 0 .22 5.17.22 11.48c0 2.03.53 4.03 1.53 5.77
