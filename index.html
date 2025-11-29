@@ -14,10 +14,10 @@
       --muted:#e0d9ff;
       --glass: rgba(255,255,255,0.04);
       --maxw:1100px;
-      --color-tech:#ff6b6b; /* vermelho vibrante */
-      --color-fashion:#feca57; /* amarelo chamativo */
-      --color-beauty:#48dbfb; /* azul claro */
-      --color-sport:#1dd1a1; /* verde vivo */
+      --color-tech:#ff6b6b; 
+      --color-fashion:#feca57; 
+      --color-beauty:#48dbfb; 
+      --color-sport:#1dd1a1; 
     }
     *{box-sizing:border-box;font-family:Inter,system-ui,Arial,Helvetica,sans-serif}
     html,body{height:100%;margin:0;background:var(--bg-gradient);color:var(--muted)}
@@ -39,6 +39,7 @@
     .grid-sections{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:14px}
     .section-card{padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.5);color:white;transition:transform 0.2s}
     .section-card:hover{transform:translateY(-5px)}
+    .section-card img{width:100%;border-radius:10px;margin-bottom:12px}
     .section-card.tech{background:linear-gradient(135deg,#ff6b6b,#ff4757)}
     .section-card.fashion{background:linear-gradient(135deg,#feca57,#ff9f1a); color:#12021a}
     .section-card.beauty{background:linear-gradient(135deg,#48dbfb,#1e90ff)}
@@ -122,6 +123,7 @@
 
         <div class="grid-sections">
           <div class="section-card tech">
+            <img src="imagens/gadget.jpg" alt="Gadgets e acessórios">
             <h3>🔌 Acessórios & Tecnologia</h3>
             <ul>
               <li>Últimos gadgets e acessórios em promoção 🎧</li>
@@ -132,6 +134,7 @@
           </div>
 
           <div class="section-card fashion">
+            <img src="imagens/moda.jpg" alt="Moda e vestuário">
             <h3>👗 Moda & Vestuário</h3>
             <ul>
               <li>Peças únicas e tendências internacionais ✨</li>
@@ -142,6 +145,7 @@
           </div>
 
           <div class="section-card beauty">
+            <img src="imagens/cosmeticos.jpg" alt="Saúde, Beleza & Cosmética">
             <h3>💄 Saúde, Beleza & Cosmética</h3>
             <ul>
               <li>Produtos originais e lacrados 💎</li>
@@ -152,6 +156,7 @@
           </div>
 
           <div class="section-card sport">
+            <img src="imagens/desporto.jpg" alt="Equipamentos de desporto">
             <h3>🏅 Desporto</h3>
             <ul>
               <li>Equipamentos profissionais e amadores ⚽</li>
