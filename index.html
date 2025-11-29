@@ -53,14 +53,18 @@ body, html {
 header{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .logo{background:linear-gradient(135deg,var(--accent),#5e33ff);padding:12px;border-radius:10px;color:white;font-weight:800;font-size:20px;width:100%;text-align:center}
 h1{font-size:26px;margin:0}
-p.lead{color:#e9e1ff;margin-top:6px;font-size:14px}
+.lead{color:#e9e1ff;margin-top:6px;font-size:14px}
 
-/* Slogan animado */
-#slogan{margin-top:6px;font-size:16px;font-weight:600;min-height:24px;}
-#slogan span{display:inline-block; opacity:0;}
-.red{color:#ff4c4c;}
-.green{color:#28a745;}
-.orange{color:#ff9f1a; background:rgba(0,0,0,0.2); padding:0 4px; border-radius:4px;}
+.slogan-container{height:28px;margin-top:6px; position:relative; overflow:hidden;}
+.slogan{position:absolute; top:0; left:0; white-space:nowrap; opacity:0; font-weight:600;}
+.slogan.red{color:#ff4d4d;}
+.slogan.green{color:#2ecc71;}
+.slogan.white{color:#ffffff; background:orange; padding:2px 6px; border-radius:4px;}
+
+@keyframes typing{
+  from { width:0; opacity:1;}
+  to { width:100%; opacity:1;}
+}
 
 .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:20px}
 .card{background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.08));border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.6);transition:transform 0.3s}
@@ -120,10 +124,10 @@ footer{margin-top:30px;padding:12px;text-align:center;color:#cfc6e6;opacity:0.9;
 <div class="container">
 <header>
   <div class="logo">MUSSILIPO INVESTIMENTO</div>
-  <div id="slogan">
-    <span class="red">Produtos importados com confiança</span>
-    <span class="green">Entrega rápida e segura</span>
-    <span class="orange">Atendimento personalizado</span>
+  <div class="slogan-container">
+    <span class="slogan red">O Melhor em Produtos Importados</span>
+    <span class="slogan green">Entrega Rápida & Segura</span>
+    <span class="slogan white">Preço Justo Garantido</span>
   </div>
   <div>
     <h1>Catálogos & Encomendas — Acessórios, Tecnologia, Moda, Beleza e mais</h1>
@@ -144,7 +148,7 @@ footer{margin-top:30px;padding:12px;text-align:center;color:#cfc6e6;opacity:0.9;
     </div>
 
     <div class="cta">
-      <a class="btn" href="https://wa.me/258871828517?text=Ol%C3%A1%2C+quero+fazer+um+pedido+de+importa%C3%A7%C3%A3o">💬 Falar pelo WhatsApp</a>
+      <a class="btn" href="https://wa.me/258862583032?text=Ol%C3%A1%2C+quero+fazer+um+pedido+de+importa%C3%A7%C3%A3o">💬 Falar pelo WhatsApp</a>
       <a class="btn ghost" href="#catalogos">Ver Catálogos</a>
     </div>
 
@@ -159,7 +163,7 @@ footer{margin-top:30px;padding:12px;text-align:center;color:#cfc6e6;opacity:0.9;
       <h3>📣 Oferta</h3>
       <p style="margin:6px 0">Reservas com entrada — Descontos para compras por atacado. Envia o link do produto e recebes orçamento em 24h.</p>
       <div class="section-actions">
-        <a class="btn small" href="https://wa.me/258871828517?text=Quero+or%C3%A7amento+para+importa%C3%A7%C3%A3o">Pedir Orçamento</a>
+        <a class="btn small" href="https://wa.me/258862583032?text=Quero+or%C3%A7amento+para+importa%C3%A7%C3%A3o">Pedir Orçamento</a>
         <a class="btn small ghost" href="#metodo">Como Pagar</a>
       </div>
     </div>
@@ -167,11 +171,11 @@ footer{margin-top:30px;padding:12px;text-align:center;color:#cfc6e6;opacity:0.9;
     <div class="card">
       <h3>📞 Contactos</h3>
       <p class="small">
-        WhatsApp: +258 87 182 8517<br/>
+        WhatsApp: +258 86 258 3032<br/>
         Email: <a href="mailto:alcidomussilipo09@gmail.com" style="color:#f3eefe;text-decoration:underline">alcidomussilipo09@gmail.com</a><br/>
         Titular E-mola: Alcido Armando Daniel Mussilipo
       </p>
-      <a class="btn small" href="https://wa.me/258871828517?text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es">Falar agora</a>
+      <a class="btn small" href="https://wa.me/258862583032?text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es">Falar agora</a>
     </div>
   </aside>
 </div>
@@ -260,7 +264,7 @@ footer{margin-top:30px;padding:12px;text-align:center;color:#cfc6e6;opacity:0.9;
 </main>
 
 <footer>
-<div>© <strong>Mussilipo Investimento</strong> — WhatsApp: +258 87 182 8517 • Email: <a href="mailto:alcidomussilipo09@gmail.com" style="color:#f3eefe;text-decoration:underline">alcidomussilipo09@gmail.com</a> • E-mola 862583032 • Titular: Alcido Armando Daniel Mussilipo</div>
+<div>© <strong>Mussilipo Investimento</strong> — WhatsApp: +258 86 258 3032 • Email: <a href="mailto:alcidomussilipo09@gmail.com" style="color:#f3eefe;text-decoration:underline">alcidomussilipo09@gmail.com</a> • E-mola 862583032 • Titular: Alcido Armando Daniel Mussilipo</div>
 </footer>
 </div>
 
@@ -271,22 +275,11 @@ footer{margin-top:30px;padding:12px;text-align:center;color:#cfc6e6;opacity:0.9;
 </div>
 
 <script>
-// Criar estrelas aleatórias
+// Estrelas aleatórias
 for(let i=0;i<100;i++){
   let star=document.createElement('div');
   star.classList.add('star');
   star.style.width=Math.random()*3+1+'px';
   star.style.height=star.style.width;
   star.style.top=Math.random()*100+'%';
-  star.style.left=Math.random()*100+'%';
-  star.style.animationDuration=(Math.random()*3+2)+'s';
-  document.body.appendChild(star);
-}
-
-// Slogan animado com efeito digitação
-const spans = document.querySelectorAll("#slogan span");
-let i = 0;
-function typeSlogan(){
-  spans.forEach(s=>s.style.opacity=0);
-  let current = spans[i];
-  current
+  star.style
