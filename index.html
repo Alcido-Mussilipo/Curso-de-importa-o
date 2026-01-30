@@ -20,135 +20,115 @@
       --radius:16px;
     }
     *{box-sizing:border-box}
-    html,body{
-      margin:0;padding:0;
-      background:linear-gradient(180deg,#0b1223 0%, #0f172a 100%);
-      color:var(--text);
-      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif
-    }
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1223 0%, #0f172a 100%);color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     a{color:inherit;text-decoration:none}
     .container{max-width:1100px;margin:0 auto;padding:32px 20px}
 
     /* Banner */
-    .limited-banner{
-      background:linear-gradient(90deg,#ef4444,#f87171);
+    .limited-banner {
+      background: linear-gradient(90deg,#ef4444,#f87171);
       color:#fff;
       text-align:center;
       font-weight:800;
-      font-size:1.4rem;
-      padding:12px;
+      font-size:1.5rem;
+      padding:10px 0;
       border-radius:12px;
       margin-bottom:15px;
     }
 
     header{
-      display:grid;
-      gap:18px;
-      justify-items:center;
-      text-align:center;
+      display:grid;gap:18px;align-items:center;justify-items:center;text-align:center;
+      padding:20px 20px 10px 20px;
     }
-
-    .badge{
-      padding:6px 14px;
-      border-radius:999px;
-      background:#ef444433;
-      color:#fecaca;
-      font-weight:700;
-      font-size:12px;
-      border:1px solid #ef444480
-    }
-
-    h1{font-size:clamp(28px,4vw,46px);margin:0}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:#ef444433;color:#fecaca;font-weight:600;font-size:12px;border:1px solid #ef444480}
+    h1{font-size:clamp(28px,4vw,46px);line-height:1.1;margin:6px 0 0 0}
     .sub{color:var(--muted);max-width:800px}
 
     .hero-card{
-      margin-top:24px;
-      background:var(--card);
-      border:1px solid #22c55e33;
-      border-radius:var(--radius);
-      padding:22px;
-      box-shadow:var(--shadow);
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:22px;
+      margin-top:24px;background:radial-gradient(80% 120% at 0% 0%, #22c55e22 0%, transparent 60%), var(--card);
+      border:1px solid #22c55e33;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);
+      display:grid;grid-template-columns:1.2fr .8fr;gap:22px;
     }
-    @media(max-width:900px){.hero-card{grid-template-columns:1fr}}
+    @media (max-width:900px){.hero-card{grid-template-columns:1fr}}
 
     .price{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-bottom:10px;
+      display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:8px 0 2px 0
     }
-
     .old{
       color:var(--danger);
       text-decoration:line-through;
-      font-weight:700;
       opacity:.85;
+      font-weight:700
     }
-
     .old::after{
       content:" ❌ ESGOTADO";
+      font-weight:800
     }
-
     .now{
       background:linear-gradient(90deg,var(--accent),#16a34a);
-      padding:10px 18px;
+      padding:10px 16px;
       border-radius:12px;
-      font-weight:900;
-      color:#052e1a;
-      font-size:1.1rem;
+      font-weight:800;
+      color:#052e1a
     }
 
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
-
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
     .btn{
-      padding:12px 18px;
-      border-radius:12px;
-      font-weight:700;
-      border:none;
-      cursor:pointer;
-      background:#ffffff10;
-      color:var(--text);
+      padding:12px 18px;border-radius:12px;border:1px solid #ffffff22;background:#ffffff0d;
+      color:var(--text);font-weight:700;cursor:pointer
     }
-
-    .btn.primary{
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      color:#052e1a;
-    }
-
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#052e1a;border:none}
+    .btn.copy{display:inline-flex;align-items:center;gap:8px}
     .note{font-size:12px;color:var(--muted)}
 
-    .card{
-      background:var(--card);
-      border-radius:16px;
-      padding:18px;
-      border:1px solid #ffffff12;
-    }
-
-    .list{list-style:none;padding:0;display:grid;gap:10px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid #ffffff12;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
     .list li{display:flex;gap:10px}
 
-    footer{text-align:center;color:var(--muted);margin-top:40px}
+    .payments{
+      background:linear-gradient(180deg,#111827 0%, #0b1223 100%);
+      border:1px solid #22c55e33;border-radius:16px;padding:18px;margin-top:22px;box-shadow:var(--shadow)
+    }
+    .pay-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between;border-bottom:1px dashed #ffffff20;padding:10px 0}
+    .pay-row:last-child{border-bottom:none}
+    .pay-label{font-weight:700}
+
+    footer{color:var(--muted);text-align:center;padding:26px 10px}
+
+    .whatsapp-float{
+      position:fixed;right:18px;bottom:18px;z-index:50;
+      display:flex;align-items:center;gap:10px;
+      background:#25D366;color:#062b13;border-radius:999px;padding:12px 16px;
+      box-shadow:0 10px 20px rgba(0,0,0,.35);font-weight:800
+    }
+
+    .toast{
+      position:fixed;left:50%;transform:translateX(-50%);bottom:90px;z-index:60;
+      background:#111827;border:1px solid #22c55e66;color:var(--text);
+      padding:10px 14px;border-radius:12px;box-shadow:var(--shadow);
+      opacity:0;pointer-events:none
+    }
+    .toast.show{opacity:1}
   </style>
 </head>
 
 <body>
 
   <div class="limited-banner">
-    ⚠️ PROMOÇÃO ENCERRADA — PREÇO ATUAL 1000Mt ⚠️
+    ⚠️ PROMOÇÃO ENCERRADA — PREÇO ATUAL 1000Mt 🚨
   </div>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Curso%20de%20Importa%C3%A7%C3%A3o.%20Vi%20que%20o%20pre%C3%A7o%20atual%20%C3%A9%201000Mt.%20Pode%20enviar%20detalhes?"
+     target="_blank">💬 WhatsApp</a>
 
   <div class="container">
     <header>
-      <span class="badge">Vagas promocionais esgotadas</span>
+      <span class="badge">Promoção encerrada</span>
       <h1>Curso de Importação da China 🇨🇳 para Moçambique 🇲🇿</h1>
-      <p class="sub">
-        Aprenda a importar com segurança no <strong>AliExpress</strong>, 
-        <strong>Alibaba</strong> e <strong>Shein</strong> e lucre no mercado moçambicano.
-      </p>
+      <p class="sub">Aprenda a comprar com segurança no AliExpress, Alibaba e Shein e lucrar na revenda.</p>
 
       <div class="hero-card">
         <div>
@@ -159,15 +139,10 @@
 
           <div class="cta">
             <a class="btn primary"
-              href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Curso%20de%20Importa%C3%A7%C3%A3o.%20Vi%20que%20o%20pre%C3%A7o%20atual%20%C3%A9%201000Mt.%20Pode%20enviar%20mais%20detalhes?"
-              target="_blank">
-              Quero me inscrever 🚀
-            </a>
+               href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Curso%20de%20Importa%C3%A7%C3%A3o.%20Pre%C3%A7o%20atual%201000Mt."
+               target="_blank">Quero garantir minha vaga ✨</a>
+            <a href="#pagamentos" class="btn">Ver formas de pagamento 💳</a>
           </div>
-
-          <p class="note">
-            📌 Acesso liberado imediatamente após confirmação do pagamento
-          </p>
         </div>
 
         <div class="card">
@@ -175,19 +150,28 @@
           <ul class="list">
             <li>✅ Comprar no AliExpress, Alibaba e Shein</li>
             <li>✅ Identificar fornecedores confiáveis</li>
-            <li>✅ Frete aéreo e marítimo para Moçambique</li>
-            <li>✅ Desembaraço aduaneiro sem complicações</li>
-            <li>✅ Formar preço e lucrar na revenda</li>
+            <li>✅ Frete e desembaraço em Moçambique</li>
+            <li>✅ Formar preço e lucrar</li>
           </ul>
         </div>
       </div>
     </header>
 
+    <section id="pagamentos" class="payments">
+      <h2>💵 Formas de pagamento</h2>
+
+      <p><strong>M-Pesa:</strong> 850 415 578 — Alaita Miguel</p>
+      <p><strong>E-Mola:</strong> 862 583 032 — Alcido Armando Daniel Mussilipo</p>
+    </section>
+
     <footer>
-      © <script>document.write(new Date().getFullYear())</script>  
-      Mussilipo Investimento — Todos os direitos reservados.
+      © <span id="year"></span> Mussilipo Investimento
     </footer>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
