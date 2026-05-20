@@ -1,863 +1,872 @@
-‎<!DOCTYPE html>
-‎<html lang="pt">
-‎<head>
-‎<meta charset="UTF-8">
-‎<meta name="viewport" content="width=device-width, initial-scale=1.0">
-‎<title>Mussilipo Shop</title>
-‎<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-‎<style>
-‎*{
-‎margin:0;
-‎padding:0;
-‎box-sizing:border-box;
-‎font-family:Arial, sans-serif;
-‎scroll-behavior:smooth;
-‎}
-‎
-‎body{
-‎background:#0d0d0d;
-‎color:white;
-‎}
-‎
-‎.logo-img{
-‎width:80px;
-‎height:80px;
-‎object-fit:contain;
-‎border-radius:12px;
-‎display:block;
-‎box-shadow:0 0 15px #00c853;
-‎}
-‎
-‎header{
-‎position:fixed;
-‎top:0;
-‎left:0;
-‎width:100%;
-‎background:#111;
-‎padding:15px 40px;
-‎display:flex;
-‎justify-content:space-between;
-‎align-items:center;
-‎z-index:1000;
-‎border-bottom:2px solid #00c853;
-‎}
-‎
-‎.logo{
-‎display:flex;
-‎align-items:center;
-‎gap:15px;
-‎}
-‎
-‎.logo-box{
-‎width:55px;
-‎height:55px;
-‎border:2px dashed #00c853;
-‎border-radius:12px;
-‎display:flex;
-‎align-items:center;
-‎justify-content:center;
-‎color:#00c853;
-‎font-size:12px;
-‎text-align:center;
-‎padding:5px;
-‎}
-‎
-‎.logo h1{
-‎color:#00c853;
-‎font-size:28px;
-‎}
-‎
-‎nav{
-‎display:flex;
-‎gap:25px;
-‎}
-‎
-‎nav a{
-‎color:white;
-‎text-decoration:none;
-‎font-weight:bold;
-‎transition:0.3s;
-‎}
-‎
-‎nav a:hover{
-‎color:#00c853;
-‎}
-‎
-‎.hero{
-‎height:100vh;
-‎display:flex;
-‎justify-content:center;
-‎align-items:center;
-‎text-align:center;
-‎padding:20px;
-‎background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop') center/cover;
-‎}
-‎
-‎.hero-content h2{
-‎font-size:55px;
-‎margin-bottom:20px;
-‎color:#00e676;
-‎}
-‎
-‎.hero-content p{
-‎font-size:20px;
-‎max-width:800px;
-‎margin:auto;
-‎line-height:1.6;
-‎}
-‎
-‎.hero-buttons{
-‎margin-top:30px;
-‎display:flex;
-‎gap:20px;
-‎justify-content:center;
-‎flex-wrap:wrap;
-‎}
-‎
-‎.btn{
-‎padding:15px 30px;
-‎border:none;
-‎border-radius:10px;
-‎font-size:16px;
-‎font-weight:bold;
-‎text-decoration:none;
-‎cursor:pointer;
-‎transition:0.3s;
-‎}
-‎
-‎.btn-green{
-‎background:#00c853;
-‎color:white;
-‎}
-‎
-‎.btn-green:hover{
-‎background:#00e676;
-‎transform:scale(1.05);
-‎}
-‎
-‎.proof-btn{
-‎display:inline-block;
-‎background:linear-gradient(135deg,#00c853,#00e676);
-‎color:white;
-‎padding:18px 35px;
-‎font-size:18px;
-‎font-weight:bold;
-‎border-radius:15px;
-‎text-decoration:none;
-‎box-shadow:0 0 25px rgba(0,230,118,0.5);
-‎transition:0.3s;
-‎margin-top:20px;
-‎}
-‎
-‎.proof-btn:hover{
-‎transform:translateY(-5px) scale(1.03);
-‎box-shadow:0 0 35px #00e676;
-‎}
-‎
-‎.section-title{
-‎text-align:center;
-‎font-size:40px;
-‎margin:80px 0 40px;
-‎color:#00e676;
-‎}
-‎
-‎.products{
-‎padding:40px;
-‎}
-‎
-‎.product-grid{
-‎display:grid;
-‎grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-‎gap:30px;
-‎}
-‎
-‎.product-img{
-‎width:100%;
-‎height:250px;
-‎object-fit:cover;
-‎display:block;
-‎}
-‎
-‎.card{
-‎background:#161616;
-‎border-radius:20px;
-‎overflow:hidden;
-‎border:1px solid #1f1f1f;
-‎box-shadow:0 0 20px rgba(0,0,0,0.5);
-‎transition:0.3s;
-‎}
-‎
-‎.card:hover{
-‎transform:translateY(-10px);
-‎}
-‎
-‎.image-placeholder{
-‎height:250px;
-‎background:#222;
-‎display:flex;
-‎justify-content:center;
-‎align-items:center;
-‎color:#777;
-‎font-size:18px;
-‎}
-‎
-‎.card-content{
-‎padding:20px;
-‎}
-‎
-‎.card-content h3{
-‎font-size:28px;
-‎margin-bottom:10px;
-‎color:#00e676;
-‎}
-‎
-‎.price{
-‎font-size:26px;
-‎font-weight:bold;
-‎margin:15px 0;
-‎}
-‎
-‎.benefits{
-‎margin:15px 0;
-‎line-height:1.7;
-‎color:#ccc;
-‎}
-‎
-‎.card-buttons{
-‎display:flex;
-‎flex-direction:column;
-‎gap:12px;
-‎margin-top:20px;
-‎}
-‎
-‎.badges{
-‎display:flex;
-‎flex-wrap:wrap;
-‎gap:10px;
-‎margin-top:15px;
-‎}
-‎
-‎.badge{
-‎background:#00c853;
-‎padding:8px 12px;
-‎border-radius:30px;
-‎font-size:13px;
-‎font-weight:bold;
-‎}
-‎
-‎.cart{
-‎position:fixed;
-‎right:25px;
-‎bottom:25px;
-‎background:linear-gradient(135deg,#00c853,#00e676);
-‎color:white;
-‎width:85px;
-‎height:85px;
-‎display:flex;
-‎align-items:center;
-‎justify-content:center;
-‎border-radius:50%;
-‎font-size:38px;
-‎z-index:1000;
-‎cursor:pointer;
-‎box-shadow:0 0 25px #00e676;
-‎transition:0.3s;
-‎animation:pulse 2s infinite;
-‎}
-‎
-‎.cart:hover{
-‎transform:scale(1.1);
-‎}
-‎
-‎@keyframes pulse{
-‎0%{
-‎box-shadow:0 0 15px #00e676;
-‎}
-‎50%{
-‎box-shadow:0 0 35px #00e676;
-‎}
-‎100%{
-‎box-shadow:0 0 15px #00e676;
-‎}
-‎}
-‎
-‎.cart-panel{
-‎position:fixed;
-‎right:-450px;
-‎top:0;
-‎width:420px;
-‎height:100vh;
-‎background:#111;
-‎padding:25px;
-‎transition:0.4s;
-‎overflow-y:auto;
-‎z-index:2000;
-‎}
-‎
-‎.cart-panel.active{
-‎right:0;
-‎}
-‎
-‎.cart-item{
-‎background:#1a1a1a;
-‎padding:15px;
-‎border-radius:10px;
-‎margin-bottom:15px;
-‎}
-‎
-‎.total{
-‎font-size:24px;
-‎font-weight:bold;
-‎margin:20px 0;
-‎color:#00e676;
-‎}
-‎
-‎.payment{
-‎padding:60px 30px;
-‎background:#111;
-‎margin-top:50px;
-‎}
-‎
-‎.payment-box{
-‎max-width:900px;
-‎margin:auto;
-‎background:#1a1a1a;
-‎padding:40px;
-‎border-radius:20px;
-‎}
-‎
-‎.payment-box h3{
-‎color:#00e676;
-‎margin-bottom:20px;
-‎font-size:30px;
-‎}
-‎
-‎.payment-box p{
-‎margin:12px 0;
-‎line-height:1.8;
-‎}
-‎
-‎.copy-btn{
-‎background:#00c853;
-‎border:none;
-‎padding:10px 15px;
-‎margin-top:10px;
-‎color:white;
-‎border-radius:8px;
-‎cursor:pointer;
-‎}
-‎
-‎.about{
-‎padding:70px 30px;
-‎text-align:center;
-‎line-height:2;
-‎max-width:1100px;
-‎margin:auto;
-‎}
-‎
-‎.trust{
-‎display:grid;
-‎grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-‎gap:20px;
-‎padding:40px;
-‎}
-‎
-‎.trust-card{
-‎background:#161616;
-‎padding:30px;
-‎border-radius:20px;
-‎text-align:center;
-‎}
-‎
-‎.trust-card i{
-‎font-size:45px;
-‎color:#00e676;
-‎margin-bottom:15px;
-‎}
-‎
-‎footer{
-‎background:black;
-‎padding:30px;
-‎text-align:center;
-‎margin-top:50px;
-‎color:#aaa;
-‎}
-‎
-‎@media(max-width:768px){
-‎header{
-‎flex-direction:column;
-‎gap:20px;
-‎padding:20px;
-‎}
-‎
-‎.hero-content h2{
-‎font-size:38px;
-‎}
-‎
-‎nav{
-‎flex-wrap:wrap;
-‎justify-content:center;
-‎}
-‎
-‎.cart-panel{
-‎width:100%;
-‎}
-‎}
-‎</style>
-‎</head>
-‎<body>
-‎
-‎<header>
-‎<div class="logo">
-‎<img src="foto.png" class="logo-img" alt="Logo">
-‎<h1>Mussilipo Shop</h1>
-‎</div>
-‎
-‎<nav>
-‎<a href="#produtos">Produtos</a>
-‎<a href="#pagamento">Área de Pagamento</a>
-‎<a href="#sobre">Sobre Nós</a>
-‎</nav>
-‎</header>
-‎
-‎<section class="hero">
-‎<div class="hero-content">
-‎<h2>Produtos Originais Inuka</h2>
-‎<p>
-‎A melhor experiência em compras online com entrega rápida, segurança total,
-‎frete grátis e produtos importados diretamente da fábrica.
-‎</p>
-‎
-‎<div class="hero-buttons">
-‎<a href="#produtos" class="btn btn-green">Comprar Agora</a>
-‎<a href="https://wa.me/258862583032?text=Entrei%20na%20vossa%20loja%20e%20não%20consegui%20fazer%20a%20compra,%20peço%20uma%20ajuda%20☺️" class="btn btn-green">Pedir Apoio</a>
-‎</div>
-‎</div>
-‎</section>
-‎
-‎<section class="trust">
-‎<div class="trust-card">
-‎<i class="fa-solid fa-truck-fast"></i>
-‎<h3>Frete Grátis</h3>
-‎<p>Entrega rápida e gratuita em todos os produtos.</p>
-‎</div>
-‎
-‎<div class="trust-card">
-‎<i class="fa-solid fa-shield-halved"></i>
-‎<h3>Proteção de Dados</h3>
-‎<p>Os seus dados são protegidos e seguros.</p>
-‎</div>
-‎
-‎<div class="trust-card">
-‎<i class="fa-solid fa-award"></i>
-‎<h3>Produtos Originais</h3>
-‎<p>Produtos Inuka 100% autênticos e eficientes.</p>
-‎</div>
-‎
-‎<div class="trust-card">
-‎<i class="fa-solid fa-circle-check"></i>
-‎<h3>Garantia de Entrega</h3>
-‎<p>Garantimos a entrega do seu pedido.</p>
-‎</div>
-‎</section>
-‎
-‎<section class="products" id="produtos">
-‎<h2 class="section-title">Nossos Produtos</h2>
-‎
-‎<div class="product-grid">
-‎
-‎<div class="card">
-‎<img src="perfume.jpg" class="product-img" alt="Perfume Inuka">
-‎<div class="card-content">
-‎<h3>Perfume Inuka</h3>
-‎<p class="price">1500 MZN</p>
-‎<p class="benefits">
-‎Perfume elegante, aroma duradouro e sofisticado.
-‎Ideal para o dia a dia e ocasiões especiais.
-‎</p>
-‎<div class="badges">
-‎<span class="badge">Frete Grátis</span>
-‎<span class="badge">Original</span>
-‎</div>
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Perfume Inuka',1500)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Perfume Inuka',1500)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="ampola.jpg" class="product-img" alt="Perfume Inuka">
-‎<div class="card-content">
-‎<h3>Ampolas Inuka</h3>
-‎<p class="price">250 MZN</p>
-‎<p class="benefits">
-‎Ajuda no fortalecimento capilar e revitalização dos fios.
-‎Resultados rápidos e eficientes.
-‎</p>
-‎<div class="badges">
-‎<span class="badge">Mais Vendido</span>
-‎<span class="badge">Original</span>
-‎</div>
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Ampolas Inuka',250)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Ampolas Inuka',250)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="creme.jpg" class="product-img" alt="Creme Inuka">
-‎<div class="card-content">
-‎<h3>Creme Inuka</h3>
-‎<p class="price">1000 MZN</p>
-‎<p class="benefits">
-‎Hidratação profunda, pele macia e aparência saudável.
-‎</p>
-‎<div class="badges">
-‎<span class="badge">Qualidade Premium</span>
-‎</div>
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Creme Inuka',1000)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Creme Inuka',1000)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="oleo.jpg" class="product-img" alt="Óleo Inuka">
-‎<div class="card-content">
-‎<h3>Óleo Inuka</h3>
-‎<p class="price">1950 MZN</p>
-‎<p class="benefits">
-‎Óleo corporal e capilar com fórmula nutritiva e restauradora.
-‎</p>
-‎<div class="badges">
-‎<span class="badge">Importado</span>
-‎</div>
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Óleo Inuka',1950)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Óleo Inuka',1950)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="carro.jpg" class="product-img" alt="Óleo Inuka">
-‎<div class="card-content">
-‎<h3>Ambientalizador de Carro</h3>
-‎<p class="price">1000 MZN</p>
-‎<p class="benefits">
-‎Deixa o seu carro perfumado e elegante durante semanas.
-‎</p>
-‎<div class="badges">
-‎<span class="badge">Super Aroma</span>
-‎</div>
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Ambientalizador',1000)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Ambientalizador',1000)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="agua.jpg" class="product-img" alt="Creme Inuka">
-‎<div class="card-content">
-‎<h3>Água de Colónia</h3>
-‎<p class="price">1500 MZN</p>
-‎<p class="benefits">
-‎Fragrância suave e refrescante para todas as idades.
-‎</p>
-‎<div class="badges">
-‎<span class="badge">Longa Duração</span>
-‎</div>
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Água de Colónia',1500)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Água de Colónia',1500)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="Patins.jpg" class="product-img" alt="Patins 3 Rodas">
-‎<div class="card-content">
-‎<h3>Patins 3 Rodas (Cavalos)</h3>
-‎<p class="price">9000 MZN</p>
-‎<p class="benefits">
-‎Produto de qualidade altíssima, com suporte e suspensão de qualidade,
-‎rodas reforçadas de 110mm para máxima estabilidade e velocidade.
-‎</p>
-‎
-‎<div class="badges">
-‎<span class="badge">Premium</span>
-‎<span class="badge">Mais Vendido</span>
-‎</div>
-‎
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Patins 3 Rodas',9000)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Patins 3 Rodas',9000)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="Crianca.jpg" class="product-img" alt="Patins Infantil Inline">
-‎<div class="card-content">
-‎<h3>Patins Infantil Inline</h3>
-‎<p class="price">2500 MZN</p>
-‎<p class="benefits">
-‎Produto eficiente e seguro para crianças.
-‎Diversão garantida com conforto e estabilidade.
-‎</p>
-‎
-‎<div class="badges">
-‎<span class="badge">Original</span>
-‎</div>
-‎
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Patins Infantil Inline',2500)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Patins Infantil Inline',2500)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="Adulto.jpg" class="product-img" alt="Patins Inline Adulto">
-‎<div class="card-content">
-‎<h3>Patins Inline Adulto</h3>
-‎<p class="price">4500 MZN</p>
-‎<p class="benefits">
-‎Produto de qualidade e eficiente para distração,
-‎esporte e liberação de energia com conforto.
-‎</p>
-‎
-‎<div class="badges">
-‎<span class="badge">Original</span>
-‎</div>
-‎
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Patins Inline Adulto',4500)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Patins Inline Adulto',4500)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="colar.jpg" class="product-img" alt="Colar">
-‎<div class="card-content">
-‎<h3>Colar Exclusivo</h3>
-‎<p class="price">1750 MZN</p>
-‎<p class="benefits">
-‎Cria elegância, presença e estilo único para qualquer ocasião.
-‎</p>
-‎
-‎<div class="badges">
-‎<span class="badge">Original</span>
-‎</div>
-‎
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Colar Exclusivo',1750)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Colar Exclusivo',1750)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="Conjunto.jpg" class="product-img" alt="Conjunto Estiloso">
-‎<div class="card-content">
-‎<h3>Conjunto Estiloso</h3>
-‎<p class="price">5250 MZN</p>
-‎<p class="benefits">
-‎Conjunto especial com relógio, colar, bracelete, anel e carteira.
-‎Ideal para pessoas que gostam de marcar diferença.
-‎Estoque limitado.
-‎</p>
-‎
-‎<div class="badges">
-‎<span class="badge">Premium</span>
-‎<span class="badge">Exclusivo</span>
-‎</div>
-‎
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Conjunto Estiloso',5250)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Conjunto Estiloso',5250)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="Medio.jpg" class="product-img" alt="Conjunto Médio">
-‎<div class="card-content">
-‎<h3>Conjunto Médio</h3>
-‎<p class="price">3750 MZN</p>
-‎<p class="benefits">
-‎Conjunto médio com relógio, bracelete e carteira
-‎para marcar diferença do seu jeito.
-‎</p>
-‎
-‎<div class="badges">
-‎<span class="badge">Premium</span>
-‎</div>
-‎
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Conjunto Médio',3750)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Conjunto Médio',3750)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎<div class="card">
-‎<img src="Sapato.jpg" class="product-img" alt="Sapatos Exclusivos">
-‎<div class="card-content">
-‎<h3>Sapatos Exclusivos</h3>
-‎<p class="price">1950 MZN</p>
-‎<p class="benefits">
-‎Sapatos importados diretamente da Shein,
-‎com conforto, qualidade e confiança em cada passo.
-‎</p>
-‎
-‎<div class="badges">
-‎<span class="badge">Exclusivo</span>
-‎<span class="badge">Importado</span>
-‎</div>
-‎
-‎<div class="card-buttons">
-‎<button class="btn btn-green" onclick="addToCart('Sapatos Exclusivos',1950)">🛒 Add Carrinho</button>
-‎<button class="btn btn-green" onclick="buyNow('Sapatos Exclusivos',1950)">Pagar Agora</button>
-‎</div>
-‎</div>
-‎</div>
-‎
-‎</div>
-‎</section>
-‎
-‎<div class="cart" onclick="toggleCart()">
-‎🛒
-‎</div>
-‎
-‎<div class="cart-panel" id="cartPanel">
-‎<h2>Seu Carrinho</h2>
-‎<div id="cartItems"></div>
-‎<p class="total">Total: <span id="total">0</span> MZN</p>
-‎
-‎<a class="btn btn-green" style="display:block;text-align:center;margin-bottom:15px;" href="https://wa.me/258862583032?text=Entrei%20na%20vossa%20loja%20e%20não%20consegui%20fazer%20a%20compra,%20peço%20uma%20ajuda%20☺️">
-‎Pedir Ajuda
-‎</a>
-‎
-‎<a class="btn btn-green" style="display:block;text-align:center;" href="#pagamento">
-‎Fazer Pagamento
-‎</a>
-‎</div>
-‎
-‎<section class="payment" id="pagamento">
-‎<h2 class="section-title">Área de Pagamento</h2>
-‎
-‎<div class="payment-box">
-‎<h3>Millennium BIM</h3>
-‎<p><strong>NIB:</strong> <span id="nib">000100000125122957957</span></p>
-‎<button class="copy-btn" onclick="copyText('nib')">Copiar NIB</button>
-‎
-‎<p><strong>Titular:</strong> Alcido Armando Daniel Mussilipo</p>
-‎
-‎<br><br>
-‎
-‎<h3>Emola</h3>
-‎<p><strong>Contacto:</strong> <span id="emola">862583032</span></p>
-‎<button class="copy-btn" onclick="copyText('emola')">Copiar Contacto</button>
-‎
-‎<p><strong>Titular:</strong> Alcido Armando Daniel Mussilipo</p>
-‎
-‎<br><br>
-‎
-‎<a class="proof-btn" id="proofBtn" href="https://wa.me/258862583032?text=Fiz%20o%20pagamento%20do%20produto%20e%20espero%20o%20meu%20recebimento,%20obrigado%20🫂">
-‎Enviar Comprovativo
-‎</a>
-‎</div>
-‎</section>
-‎
-‎<section class="about" id="sobre">
-‎<h2 class="section-title">Sobre Nós</h2>
-‎<p>
-‎Somos uma empresa especializada em vendas de produtos pela internet e pelo mundo,
-‎fazemos entregas rápidas e eficientes.
-‎
-‎Estamos há mais de 5 anos operando em todo o mundo,
-‎entregando felicidade, qualidade e confiança.
-‎
-‎Agora em parceria com a Inuka,
-‎os nossos produtos são os mais eficientes do mercado e os mais originais que há.
-‎
-‎Importados diretamente da fábrica para o consumidor,
-‎a Mussilipo Investimentos traz qualidade, eficiência e confiança.
-‎
-‎Milhares de clientes satisfeitos já compraram conosco.
-‎A sua satisfação é a nossa prioridade.
-‎</p>
-‎</section>
-‎
-‎<footer>
-‎<p>© 2026 Direitos Reservados a Mussilipo Investimentos</p>
-‎</footer>
-‎
-‎<script>
-‎let cart = [];
-‎
-‎function toggleCart(){
-‎document.getElementById('cartPanel').classList.toggle('active');
-‎}
-‎
-‎function addToCart(name, price){
-‎let existing = cart.find(item => item.name === name);
-‎
-‎if(existing){
-‎existing.quantity++;
-‎}else{
-‎cart.push({name, price, quantity:1});
-‎}
-‎
-‎updateCart();
-‎alert(name + ' adicionado ao carrinho!');
-‎}
-‎
-‎function updateCart(){
-‎let cartItems = document.getElementById('cartItems');
-‎let total = 0;
-‎cartItems.innerHTML = '';
-‎
-‎cart.forEach(item => {
-‎let div = document.createElement('div');
-‎div.classList.add('cart-item');
-‎div.innerHTML = `
-‎<h3>${item.name}</h3>
-‎<p>Quantidade: ${item.quantity}</p>
-‎<p>Preço: ${item.price * item.quantity} MZN</p>
-‎`;
-‎cartItems.appendChild(div);
-‎
-‎total += item.price * item.quantity;
-‎});
-‎
-‎document.getElementById('total').innerText = total;
-‎
-‎let productNames = cart.map(item => item.name + ' x' + item.quantity).join(', ');
-‎
-‎document.getElementById('proofBtn').href =
-‎`https://wa.me/258862583032?text=Fiz%20o%20pagamento%20dos%20produtos:%20${encodeURIComponent(productNames)}%20e%20espero%20o%20meu%20recebimento,%20obrigado%20🫂`;
-‎}
-‎
-‎function buyNow(name, price){
-‎cart = [{name, price, quantity:1}];
-‎updateCart();
-‎window.location.href='#pagamento';
-‎}
-‎
-‎function copyText(id){
-‎let text = document.getElementById(id).innerText;
-‎navigator.clipboard.writeText(text);
-‎alert('Copiado: ' + text);
-‎}
-‎</script>
-‎
-‎</body>
-‎</html>
-‎
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mussilipo Shop</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5fff7;
+color:#222;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:15px 40px;
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+box-shadow:0 2px 15px rgba(0,0,0,0.08);
+border-bottom:3px solid #00c853;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo-img{
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:15px;
+border:3px solid #00c853;
+}
+
+.logo h1{
+font-size:28px;
+color:#00a63e;
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:#222;
+font-weight:bold;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#00c853;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop') center/cover;
+color:white;
+}
+
+.hero-content h2{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:20px;
+max-width:800px;
+margin:auto;
+line-height:1.8;
+}
+
+.hero-buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 28px;
+border:none;
+border-radius:12px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+text-decoration:none;
+transition:0.3s;
+display:inline-block;
+}
+
+.btn-green{
+background:#00c853;
+color:white;
+}
+
+.btn-green:hover{
+background:#00e676;
+transform:translateY(-3px);
+}
+
+.btn-white{
+background:white;
+color:#00a63e;
+}
+
+.trust{
+padding:70px 30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.trust-card{
+background:white;
+padding:35px 25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.trust-card:hover{
+transform:translateY(-8px);
+}
+
+.trust-card i{
+font-size:45px;
+color:#00c853;
+margin-bottom:15px;
+}
+
+.trust-card h3{
+margin-bottom:10px;
+color:#00a63e;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+color:#00a63e;
+}
+
+.products{
+padding:100px 40px 50px;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.product-img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card-content{
+padding:25px;
+}
+
+.card-content h3{
+font-size:28px;
+color:#00a63e;
+margin-bottom:10px;
+}
+
+.price{
+font-size:28px;
+font-weight:bold;
+color:#00c853;
+margin:15px 0;
+}
+
+.benefits{
+line-height:1.8;
+color:#555;
+}
+
+.badges{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.badge{
+background:#00c853;
+color:white;
+padding:8px 14px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
+}
+
+.card-buttons{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:25px;
+}
+
+.cart{
+position:fixed;
+right:25px;
+bottom:25px;
+width:85px;
+height:85px;
+border-radius:50%;
+background:#00c853;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:35px;
+color:white;
+cursor:pointer;
+z-index:1000;
+box-shadow:0 0 25px rgba(0,200,83,0.5);
+transition:0.3s;
+}
+
+.cart:hover{
+transform:scale(1.1);
+}
+
+.cart-count{
+position:absolute;
+top:-5px;
+right:-5px;
+background:red;
+width:28px;
+height:28px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:14px;
+font-weight:bold;
+}
+
+.cart-panel{
+position:fixed;
+top:0;
+right:-450px;
+width:420px;
+height:100vh;
+background:white;
+padding:25px;
+transition:0.4s;
+overflow-y:auto;
+z-index:2000;
+box-shadow:-5px 0 25px rgba(0,0,0,0.1);
+}
+
+.cart-panel.active{
+right:0;
+}
+
+.cart-item{
+background:#f4fff5;
+padding:15px;
+border-radius:15px;
+margin-bottom:15px;
+border:1px solid #d7ffd9;
+}
+
+.quantity-controls{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:10px;
+}
+
+.qty-btn{
+width:30px;
+height:30px;
+border:none;
+border-radius:50%;
+background:#00c853;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+.remove-btn{
+margin-top:10px;
+background:red;
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.total{
+font-size:24px;
+font-weight:bold;
+margin:20px 0;
+color:#00a63e;
+}
+
+.payment{
+padding:80px 30px;
+background:#ecfff0;
+}
+
+.payment-box{
+max-width:900px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 5px 25px rgba(0,0,0,0.08);
+}
+
+.payment-box h3{
+color:#00a63e;
+margin-bottom:20px;
+font-size:30px;
+}
+
+.copy-btn{
+background:#00c853;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:10px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.about{
+padding:80px 30px;
+max-width:1100px;
+margin:auto;
+text-align:center;
+line-height:2;
+}
+
+footer{
+background:#00a63e;
+color:white;
+padding:30px;
+text-align:center;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+header{
+padding:20px;
+flex-direction:column;
+gap:20px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero-content h2{
+font-size:40px;
+}
+
+.hero-content p{
+font-size:17px;
+}
+
+.cart-panel{
+width:100%;
+}
+
+.products{
+padding:100px 20px 50px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<img src="foto.png" class="logo-img">
+<h1>Mussilipo Shop</h1>
+</div>
+
+<nav>
+<a href="#produtos">Produtos</a>
+<a href="#pagamento">Pagamento</a>
+<a href="#sobre">Sobre</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h2>Produtos Originais Inuka</h2>
+<p>
+A melhor experiência em compras online com entrega rápida,
+segurança total e produtos de alta qualidade.
+</p>
+
+<div class="hero-buttons">
+<a href="#produtos" class="btn btn-green">Comprar Agora</a>
+<a href="https://wa.me/258862583032" class="btn btn-white">Pedir Apoio</a>
+</div>
+</div>
+</section>
+
+<section class="trust">
+<div class="trust-card">
+<i class="fa-solid fa-truck-fast"></i>
+<h3>Entrega Rápida</h3>
+<p>Receba os seus produtos com rapidez.</p>
+</div>
+
+<div class="trust-card">
+<i class="fa-solid fa-shield-halved"></i>
+<h3>Compra Segura</h3>
+<p>Os seus dados estão protegidos.</p>
+</div>
+
+<div class="trust-card">
+<i class="fa-solid fa-award"></i>
+<h3>Produtos Originais</h3>
+<p>Qualidade garantida para si.</p>
+</div>
+
+<div class="trust-card">
+<i class="fa-solid fa-circle-check"></i>
+<h3>Garantia</h3>
+<p>Satisfação e confiança em cada compra.</p>
+</div>
+</section>
+
+<section class="products" id="produtos">
+<h2 class="section-title">Nossos Produtos</h2>
+
+<div class="product-grid">
+
+<div class="card">
+<img src="perfume.jpg" class="product-img">
+<div class="card-content">
+<h3>Perfume Inuka</h3>
+<p class="price">1500 MZN</p>
+<p class="benefits">Perfume elegante com aroma sofisticado e longa duração.</p>
+<div class="badges">
+<span class="badge">Original</span>
+<span class="badge">Premium</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Perfume Inuka',1500)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Perfume Inuka',1500)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="ampola.jpg" class="product-img">
+<div class="card-content">
+<h3>Ampolas Inuka</h3>
+<p class="price">250 MZN</p>
+<p class="benefits">Ajuda no fortalecimento capilar e revitalização dos fios.</p>
+<div class="badges">
+<span class="badge">Mais Vendido</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Ampolas Inuka',250)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Ampolas Inuka',250)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="creme.jpg" class="product-img">
+<div class="card-content">
+<h3>Creme Inuka</h3>
+<p class="price">1000 MZN</p>
+<p class="benefits">Hidratação profunda e pele saudável.</p>
+<div class="badges">
+<span class="badge">Premium</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Creme Inuka',1000)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Creme Inuka',1000)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="oleo.jpg" class="product-img">
+<div class="card-content">
+<h3>Óleo Inuka</h3>
+<p class="price">1950 MZN</p>
+<p class="benefits">Óleo corporal e capilar nutritivo e restaurador.</p>
+<div class="badges">
+<span class="badge">Importado</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Óleo Inuka',1950)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Óleo Inuka',1950)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="carro.jpg" class="product-img">
+<div class="card-content">
+<h3>Ambientalizador</h3>
+<p class="price">1000 MZN</p>
+<p class="benefits">Mantém o carro perfumado durante semanas.</p>
+<div class="badges">
+<span class="badge">Super Aroma</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Ambientalizador',1000)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Ambientalizador',1000)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="agua.jpg" class="product-img">
+<div class="card-content">
+<h3>Água de Colónia</h3>
+<p class="price">1500 MZN</p>
+<p class="benefits">Fragrância suave e refrescante para todas as idades.</p>
+<div class="badges">
+<span class="badge">Longa Duração</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Água de Colónia',1500)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Água de Colónia',1500)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Patins.jpg" class="product-img">
+<div class="card-content">
+<h3>Patins 3 Rodas</h3>
+<p class="price">9000 MZN</p>
+<p class="benefits">Patins premium com rodas reforçadas e estabilidade máxima.</p>
+<div class="badges">
+<span class="badge">Premium</span>
+<span class="badge">Original</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Patins 3 Rodas',9000)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Patins 3 Rodas',9000)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Crianca.jpg" class="product-img">
+<div class="card-content">
+<h3>Patins Infantil Inline</h3>
+<p class="price">2500 MZN</p>
+<p class="benefits">Patins confortáveis e seguros para crianças.</p>
+<div class="badges">
+<span class="badge">Original</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Patins Infantil Inline',2500)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Patins Infantil Inline',2500)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Adulto.jpg" class="product-img">
+<div class="card-content">
+<h3>Patins Inline Adulto</h3>
+<p class="price">4500 MZN</p>
+<p class="benefits">Patins de qualidade para esporte e diversão.</p>
+<div class="badges">
+<span class="badge">Original</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Patins Inline Adulto',4500)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Patins Inline Adulto',4500)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="colar.jpg" class="product-img">
+<div class="card-content">
+<h3>Colar Exclusivo</h3>
+<p class="price">1750 MZN</p>
+<p class="benefits">Elegância e estilo para qualquer ocasião.</p>
+<div class="badges">
+<span class="badge">Exclusivo</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Colar Exclusivo',1750)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Colar Exclusivo',1750)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Conjunto.jpg" class="product-img">
+<div class="card-content">
+<h3>Conjunto Estiloso</h3>
+<p class="price">5250 MZN</p>
+<p class="benefits">Conjunto premium com relógio, carteira e acessórios.</p>
+<div class="badges">
+<span class="badge">Premium</span>
+<span class="badge">Exclusivo</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Conjunto Estiloso',5250)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Conjunto Estiloso',5250)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Medio.jpg" class="product-img">
+<div class="card-content">
+<h3>Conjunto Médio</h3>
+<p class="price">3750 MZN</p>
+<p class="benefits">Conjunto elegante com relógio, carteira e bracelete.</p>
+<div class="badges">
+<span class="badge">Premium</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Conjunto Médio',3750)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Conjunto Médio',3750)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Sapato.jpg" class="product-img">
+<div class="card-content">
+<h3>Sapatos Exclusivos</h3>
+<p class="price">1950 MZN</p>
+<p class="benefits">Sapatos importados com conforto e qualidade.</p>
+<div class="badges">
+<span class="badge">Importado</span>
+<span class="badge">Exclusivo</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Sapatos Exclusivos',1950)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Sapatos Exclusivos',1950)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<div class="cart" onclick="toggleCart()">
+🛒
+<div class="cart-count" id="cartCount">0</div>
+</div>
+
+<div class="cart-panel" id="cartPanel">
+<h2>Seu Carrinho</h2>
+<div id="cartItems"></div>
+<p class="total">Total: <span id="total">0</span> MZN</p>
+
+<a href="#pagamento" class="btn btn-green" style="width:100%;text-align:center;">
+Fazer Pagamento
+</a>
+</div>
+
+<section class="payment" id="pagamento">
+<h2 class="section-title">Área de Pagamento</h2>
+
+<div class="payment-box">
+
+<h3>Millennium BIM</h3>
+<p><strong>NIB:</strong> <span id="nib">000100000125122957957</span></p>
+<button class="copy-btn" onclick="copyText('nib')">Copiar NIB</button>
+
+<br><br>
+
+<h3>Emola</h3>
+<p><strong>Contacto:</strong> <span id="emola">862583032</span></p>
+<button class="copy-btn" onclick="copyText('emola')">Copiar Contacto</button>
+
+<br><br>
+
+<a class="btn btn-green" href="https://wa.me/258862583032">
+Enviar Comprovativo
+</a>
+
+</div>
+</section>
+
+<section class="about" id="sobre">
+<h2 class="section-title">Sobre Nós</h2>
+<p>
+Somos especializados em vendas online,
+trazendo produtos originais,
+qualidade premium e atendimento confiável.
+</p>
+</section>
+
+<footer>
+<p>© 2026 Mussilipo Investimentos</p>
+</footer>
+
+<script>
+
+let cart = [];
+
+function toggleCart(){
+document.getElementById('cartPanel').classList.toggle('active');
+}
+
+function addToCart(name, price){
+
+let existing = cart.find(item => item.name === name);
+
+if(existing){
+existing.quantity++;
+}else{
+cart.push({name,price,quantity:1});
+}
+
+updateCart();
+}
+
+function increaseQuantity(index){
+cart[index].quantity++;
+updateCart();
+}
+
+function decreaseQuantity(index){
+
+if(cart[index].quantity > 1){
+cart[index].quantity--;
+}else{
+cart.splice(index,1);
+}
+
+updateCart();
+}
+
+function removeItem(index){
+cart.splice(index,1);
+updateCart();
+}
+
+function updateCart(){
+
+let cartItems = document.getElementById('cartItems');
+let total = 0;
+let totalItems = 0;
+
+cartItems.innerHTML = '';
+
+cart.forEach((item,index)=>{
+
+cartItems.innerHTML += `
+
+<div class="cart-item">
+
+<h3>${item.name}</h3>
+
+<p>
+Preço: ${item.price * item.quantity} MZN
+</p>
+
+<div class="quantity-controls">
+
+<button class="qty-btn"
+onclick="decreaseQuantity(${index})">
+-
+</button>
+
+<span>${item.quantity}</span>
+
+<button class="qty-btn"
+onclick="increaseQuantity(${index})">
++
+</button>
+
+</div>
+
+<button class="remove-btn"
+onclick="removeItem(${index})">
+Remover
+</button>
+
+</div>
+
+`;
+
+ total += item.price * item.quantity;
+ totalItems += item.quantity;
+
+});
+
+ document.getElementById('total').innerText = total;
+ document.getElementById('cartCount').innerText = totalItems;
+}
+
+function buyNow(name,price){
+
+cart = [{name,price,quantity:1}];
+
+updateCart();
+
+window.location.href='#pagamento';
+
+}
+
+function copyText(id){
+
+let text = document.getElementById(id).innerText;
+
+navigator.clipboard.writeText(text);
+
+alert('Copiado: ' + text);
+
+}
+
+</script>
+
+</body>
+</html>
