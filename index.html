@@ -7,7 +7,24 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 *{
+.proof-btn{
+display:inline-block;
+background:linear-gradient(135deg,#00c853,#00e676);
+color:white;
+padding:18px 35px;
+font-size:18px;
+font-weight:bold;
+border-radius:15px;
+text-decoration:none;
+box-shadow:0 0 25px rgba(0,230,118,0.5);
+transition:0.3s;
+margin-top:20px;
+}
 
+.proof-btn:hover{
+transform:translateY(-5px) scale(1.03);
+box-shadow:0 0 35px #00e676;
+}
 margin:0;
 padding:0;
 box-sizing:border-box;
@@ -225,16 +242,38 @@ font-weight:bold;
 
 .cart{
 position:fixed;
-right:20px;
-bottom:20px;
-background:#00c853;
+right:25px;
+bottom:25px;
+background:linear-gradient(135deg,#00c853,#00e676);
 color:white;
-padding:18px;
+width:85px;
+height:85px;
+display:flex;
+align-items:center;
+justify-content:center;
 border-radius:50%;
-font-size:25px;
+font-size:38px;
 z-index:1000;
 cursor:pointer;
-box-shadow:0 0 20px rgba(0,0,0,0.4);
+box-shadow:0 0 25px #00e676;
+transition:0.3s;
+animation:pulse 2s infinite;
+}
+}
+
+.cart:hover{
+transform:scale(1.1);
+}
+
+@keyframes pulse{
+0%{
+box-shadow:0 0 15px #00e676;
+}
+50%{
+box-shadow:0 0 35px #00e676;
+}
+100%{
+box-shadow:0 0 15px #00e676;
 }
 
 .cart-panel{
@@ -534,6 +573,155 @@ Fragrância suave e refrescante para todas as idades.
 </div>
 </div>
 
+  <div class="card">
+<img src="Patins.jpg" class="product-img" alt="Patins 3 Rodas">
+<div class="card-content">
+<h3>Patins 3 Rodas (Cavalos)</h3>
+<p class="price">9000 MZN</p>
+<p class="benefits">
+Produto de qualidade altíssima, com suporte e suspensão de qualidade,
+rodas reforçadas de 110mm para máxima estabilidade e velocidade.
+</p>
+
+<div class="badges">
+<span class="badge">Premium</span>
+<span class="badge">Mais Vendido</span>
+</div>
+
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Patins 3 Rodas',9000)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Patins 3 Rodas',9000)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Crianca.jpg" class="product-img" alt="Patins Infantil Inline">
+<div class="card-content">
+<h3>Patins Infantil Inline</h3>
+<p class="price">2500 MZN</p>
+<p class="benefits">
+Produto eficiente e seguro para crianças.
+Diversão garantida com conforto e estabilidade.
+</p>
+
+<div class="badges">
+<span class="badge">Original</span>
+</div>
+
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Patins Infantil Inline',2500)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Patins Infantil Inline',2500)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Adulto.jpg" class="product-img" alt="Patins Inline Adulto">
+<div class="card-content">
+<h3>Patins Inline Adulto</h3>
+<p class="price">4500 MZN</p>
+<p class="benefits">
+Produto de qualidade e eficiente para distração,
+esporte e liberação de energia com conforto.
+</p>
+
+<div class="badges">
+<span class="badge">Original</span>
+</div>
+
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Patins Inline Adulto',4500)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Patins Inline Adulto',4500)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="colar.jpg" class="product-img" alt="Colar">
+<div class="card-content">
+<h3>Colar Exclusivo</h3>
+<p class="price">1750 MZN</p>
+<p class="benefits">
+Cria elegância, presença e estilo único para qualquer ocasião.
+</p>
+
+<div class="badges">
+<span class="badge">Original</span>
+</div>
+
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Colar Exclusivo',1750)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Colar Exclusivo',1750)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Conjunto.jpg" class="product-img" alt="Conjunto Estiloso">
+<div class="card-content">
+<h3>Conjunto Estiloso</h3>
+<p class="price">5250 MZN</p>
+<p class="benefits">
+Conjunto especial com relógio, colar, bracelete, anel e carteira.
+Ideal para pessoas que gostam de marcar diferença.
+Estoque limitado.
+</p>
+
+<div class="badges">
+<span class="badge">Premium</span>
+<span class="badge">Exclusivo</span>
+</div>
+
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Conjunto Estiloso',5250)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Conjunto Estiloso',5250)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Medio.jpg" class="product-img" alt="Conjunto Médio">
+<div class="card-content">
+<h3>Conjunto Médio</h3>
+<p class="price">3750 MZN</p>
+<p class="benefits">
+Conjunto médio com relógio, bracelete e carteira
+para marcar diferença do seu jeito.
+</p>
+
+<div class="badges">
+<span class="badge">Premium</span>
+</div>
+
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Conjunto Médio',3750)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Conjunto Médio',3750)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Sapato.jpg" class="product-img" alt="Sapatos Exclusivos">
+<div class="card-content">
+<h3>Sapatos Exclusivos</h3>
+<p class="price">1950 MZN</p>
+<p class="benefits">
+Sapatos importados diretamente da Shein,
+com conforto, qualidade e confiança em cada passo.
+</p>
+
+<div class="badges">
+<span class="badge">Exclusivo</span>
+<span class="badge">Importado</span>
+</div>
+
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Sapatos Exclusivos',1950)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Sapatos Exclusivos',1950)">Pagar Agora</button>
+</div>
+</div>
+</div>
 </div>
 </section>
 
@@ -575,7 +763,7 @@ Fazer Pagamento
 
 <br><br>
 
-<a class="btn btn-green" id="proofBtn" href="https://wa.me/258862583032?text=Fiz%20o%20pagamento%20do%20produto%20e%20espero%20o%20meu%20recebimento,%20obrigado%20🫂">
+<a class="proof-btn" id="proofBtn" href="https://wa.me/258862583032?text=Fiz%20o%20pagamento%20do%20produto%20e%20espero%20o%20meu%20recebimento,%20obrigado%20🫂">
 Enviar Comprovativo
 </a>
 </div>
