@@ -1,301 +1,656 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Curso de Importação da China para Moçambique</title>
-  <meta name="description" content="Curso prático para importar da China (AliExpress, Alibaba, Shein) para Moçambique. Aprenda do zero ao lucro. Promoção: de 1000Mt por 500Mt esgotado." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0f172a;
-      --card:#111827;
-      --accent:#22c55e;
-      --accent-2:#06b6d4;
-      --text:#e5e7eb;
-      --muted:#94a3b8;
-      --danger:#ef4444;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius:16px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1223 0%, #0f172a 100%);color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:32px 20px}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mussilipo Shop</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+scroll-behavior:smooth;
+}
 
-    /* Banner vagas limitadas */
-    .limited-banner {
-      background: linear-gradient(90deg,#ef4444,#f87171);
-      color:#fff;
-      text-align:center;
-      font-weight:700;
-      font-size:1.5rem;
-      padding:10px 0;
-      border-radius:12px;
-      margin-bottom:15px;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%,100%{opacity:1}
-      50%{opacity:0.7}
-    }
+body{
+background:#0d0d0d;
+color:white;
+}
 
-    header{
-      display:grid;gap:18px;align-items:center;justify-items:center;text-align:center;
-      padding:20px 20px 10px 20px;
-    }
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:#0ea5e933;color:#7dd3fc;font-weight:600;font-size:12px;border:1px solid #0ea5e980}
-    h1{font-size:clamp(28px,4vw,46px);line-height:1.1;margin:6px 0 0 0}
-    .sub{color:var(--muted);max-width:800px}
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#111;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+border-bottom:2px solid #00c853;
+}
 
-    .hero-card{
-      margin-top:24px;background:radial-gradient(80% 120% at 0% 0%, #22c55e22 0%, transparent 60%), var(--card);
-      border:1px solid #22c55e33;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);
-      display:grid;grid-template-columns:1.2fr .8fr;gap:22px;
-    }
-    @media (max-width:900px){.hero-card{grid-template-columns:1fr}}
-    .price{
-      display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:8px 0 2px 0
-    }
-    .old{color:var(--danger);text-decoration:line-through;opacity:.8;font-weight:600}
-    .now{background:linear-gradient(90deg,var(--accent),#16a34a);padding:10px 16px;border-radius:12px;font-weight:800;color:#052e1a}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    .btn{
-      padding:12px 18px;border-radius:12px;border:1px solid #ffffff22;background:#ffffff0d;
-      color:var(--text);font-weight:700;cursor:pointer;transition:transform .05s ease, background .2s ease, border .2s ease
-    }
-    .btn:hover{transform:translateY(-1px);background:#ffffff14;border-color:#ffffff33}
-    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#052e1a;border:none}
-    .btn.copy{display:inline-flex;align-items:center;gap:8px}
-    .note{font-size:12px;color:var(--muted)}
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
 
-    .grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px
-    }
-    @media (max-width:900px){.grid{grid-template-columns:1fr}}
-    .card{
-      background:var(--card);border:1px solid #ffffff12;border-radius:16px;padding:18px;box-shadow:var(--shadow)
-    }
-    .card h3{margin:0 0 10px 0}
-    .list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
-    .list li{display:flex;gap:10px;align-items:flex-start}
-    .tick{font-weight:700}
+.logo-box{
+width:55px;
+height:55px;
+border:2px dashed #00c853;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#00c853;
+font-size:12px;
+text-align:center;
+padding:5px;
+}
 
-    .payments{
-      background:linear-gradient(180deg,#111827 0%, #0b1223 100%);
-      border:1px solid #22c55e33;border-radius:16px;padding:18px;margin-top:22px;box-shadow:var(--shadow)
-    }
-    .pay-row{
-      display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between;border-bottom:1px dashed #ffffff20;padding:10px 0
-    }
-    .pay-row:last-child{border-bottom:none}
-    .pay-id{display:flex;align-items:center;gap:10px}
-    .pay-label{font-weight:700}
-    .copy-group{display:flex;gap:8px;align-items:center}
-    .copy-out{font-size:12px;color:var(--muted);min-width:90px}
+.logo h1{
+color:#00c853;
+font-size:28px;
+}
 
-    footer{color:var(--muted);text-align:center;padding:26px 10px}
+nav{
+display:flex;
+gap:25px;
+}
 
-    .whatsapp-float{
-      position:fixed;right:18px;bottom:18px;z-index:50;
-      display:flex;align-items:center;gap:10px;
-      background:#25D366;color:#062b13;border-radius:999px;padding:12px 16px;
-      box-shadow:0 10px 20px rgba(0,0,0,.35);font-weight:800
-    }
-    .whatsapp-float:hover{filter:brightness(1.05);transform:translateY(-1px)}
-    .wa-icon{width:22px;height:22px;display:inline-block}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
 
-    .toast{
-      position:fixed;left:50%;transform:translateX(-50%);bottom:90px;z-index:60;
-      background:#111827; border:1px solid #22c55e66; color:var(--text);
-      padding:10px 14px;border-radius:12px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s ease
-    }
-    .toast.show{opacity:1}
+nav a:hover{
+color:#00c853;
+}
 
-    /* 🌟 Estilo aprimorado do botão de email */
-    .btn.email {
-      background: linear-gradient(135deg, #007bff, #4facfe);
-      color: white;
-      box-shadow: 0 3px 8px rgba(0, 123, 255, 0.3);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop') center/cover;
+}
 
-    .btn.email::after {
-      content: "✉️";
-      position: absolute;
-      right: 14px;
-      opacity: 0.85;
-      transition: transform 0.3s ease;
-    }
+.hero-content h2{
+font-size:55px;
+margin-bottom:20px;
+color:#00e676;
+}
 
-    .btn.email:hover {
-      background: linear-gradient(135deg, #0062e0, #3b8df5);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
-    }
+.hero-content p{
+font-size:20px;
+max-width:800px;
+margin:auto;
+line-height:1.6;
+}
 
-    .btn.email:hover::after {
-      transform: translateX(4px);
-    }
+.hero-buttons{
+margin-top:30px;
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
 
-  </style>
+.btn{
+padding:15px 30px;
+border:none;
+border-radius:10px;
+font-size:16px;
+font-weight:bold;
+text-decoration:none;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn-green{
+background:#00c853;
+color:white;
+}
+
+.btn-green:hover{
+background:#00e676;
+transform:scale(1.05);
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin:80px 0 40px;
+color:#00e676;
+}
+
+.products{
+padding:40px;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.card{
+background:#161616;
+border-radius:20px;
+overflow:hidden;
+border:1px solid #1f1f1f;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.image-placeholder{
+height:250px;
+background:#222;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#777;
+font-size:18px;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card-content h3{
+font-size:28px;
+margin-bottom:10px;
+color:#00e676;
+}
+
+.price{
+font-size:26px;
+font-weight:bold;
+margin:15px 0;
+}
+
+.benefits{
+margin:15px 0;
+line-height:1.7;
+color:#ccc;
+}
+
+.card-buttons{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:20px;
+}
+
+.badges{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:15px;
+}
+
+.badge{
+background:#00c853;
+padding:8px 12px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
+}
+
+.cart{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#00c853;
+color:white;
+padding:18px;
+border-radius:50%;
+font-size:25px;
+z-index:1000;
+cursor:pointer;
+box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.cart-panel{
+position:fixed;
+right:-450px;
+top:0;
+width:420px;
+height:100vh;
+background:#111;
+padding:25px;
+transition:0.4s;
+overflow-y:auto;
+z-index:2000;
+}
+
+.cart-panel.active{
+right:0;
+}
+
+.cart-item{
+background:#1a1a1a;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.total{
+font-size:24px;
+font-weight:bold;
+margin:20px 0;
+color:#00e676;
+}
+
+.payment{
+padding:60px 30px;
+background:#111;
+margin-top:50px;
+}
+
+.payment-box{
+max-width:900px;
+margin:auto;
+background:#1a1a1a;
+padding:40px;
+border-radius:20px;
+}
+
+.payment-box h3{
+color:#00e676;
+margin-bottom:20px;
+font-size:30px;
+}
+
+.payment-box p{
+margin:12px 0;
+line-height:1.8;
+}
+
+.copy-btn{
+background:#00c853;
+border:none;
+padding:10px 15px;
+margin-top:10px;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+.about{
+padding:70px 30px;
+text-align:center;
+line-height:2;
+max-width:1100px;
+margin:auto;
+}
+
+.trust{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.trust-card{
+background:#161616;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.trust-card i{
+font-size:45px;
+color:#00e676;
+margin-bottom:15px;
+}
+
+footer{
+background:black;
+padding:30px;
+text-align:center;
+margin-top:50px;
+color:#aaa;
+}
+
+@media(max-width:768px){
+header{
+flex-direction:column;
+gap:20px;
+padding:20px;
+}
+
+.hero-content h2{
+font-size:38px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.cart-panel{
+width:100%;
+}
+}
+</style>
 </head>
 <body>
 
-  <!-- Banner vagas limitadas -->
-  <div class="limited-banner">⚠️ PROMOÇÃO ENCERRADA — PREÇO ATUAL 1000Mt 🚨</div>
-
-  <!-- Botão flutuante -->
-  <a id="whatsappFloat" class="whatsapp-float"
-     href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(primeiras%2010%20pessoas%20500Mt%20%E2%86%92%20depois%201000Mt).%20Pode%20enviar%20detalhes?"
-     target="_blank" rel="noopener">
-    <span class="wa-icon" aria-hidden="true">💬</span>
-    <span>Falar no WhatsApp</span>
-  </a>
-
-  <div id="toast" class="toast">Copiado!</div>
-
-  <div class="container">
-    <header>
-      <span class="badge">🚀 Promoção Esgotada✈️</span>
-      <h1>Curso de Importação da <span style="white-space:nowrap">China 🇨🇳</span> para Moçambique 🇲🇿</h1>
-      <p class="sub">Aprenda a comprar com segurança no <strong>AliExpress</strong>, <strong>Alibaba</strong> e <strong>Shein</strong>, calcular custos, evitar golpes e lucrar na revenda no mercado moçambicano.</p>
-
-      <div class="price" aria-label="Preço atual">
-  <span class="old">500Mt</span>
-  <span class="now">Preço atual: 1000Mt</span>
+<header>
+<div class="logo">
+<div class="logo-box">SEU LOGO</div>
+<h1>Mussilipo Shop</h1>
 </div>
-          <div class="cta">
-            <a class="btn primary" id="ctaWhatsApp"
-               href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(primeiras%2010%20pessoas%20500Mt%20%E2%86%92%20depois%201000Mt).%20Pode%20enviar%20detalhes?"
-               target="_blank" rel="noopener">Quero garantir minha vaga ✨</a>
-            <a href="#pagamentos" class="btn">Ver formas de pagamento 💳</a>
-            <p class="note" style="margin-top:6px;">📧 Apoio: <a href="mailto:mussilipoinvestimento09@gmail.com" style="color:#22c55e;">mussilipoinvestimento09@gmail.com</a></p>
-          </div>
-          <p class="note">🏷️ Vagas limitadas. Após confirmação do pagamento, envio imediato do acesso.</p>
-        </div>
-        <div class="card">
-          <h3>O que você vai aprender 📚</h3>
-          <ul class="list">
-            <li><span class="tick">✅</span> Criar contas e comprar no AliExpress, Alibaba (atacado) e Shein</li>
-            <li><span class="tick">✅</span> Identificar fornecedores confiáveis e negociar como um profissional</li>
-            <li><span class="tick">✅</span> Escolher entre frete aéreo ou marítimo e calcular prazos</li>
-            <li><span class="tick">✅</span> Desembaraço aduaneiro em Moçambique sem dor de cabeça</li>
-            <li><span class="tick">✅</span> Formar preço de venda e aumentar sua margem de lucro</li>
-          </ul>
-        </div>
-      </div>
-    </header>
 
-    <section class="grid" aria-label="Benefícios">
-      <div class="card">
-        <h3>💰 Mais lucro</h3>
-        <p>Compre barato direto da origem e revenda com margem inteligente.</p>
-      </div>
-      <div class="card">
-        <h3>🛡️ Segurança</h3>
-        <p>Evite golpes e atrasos com checklist e fornecedores verificados.</p>
-      </div>
-      <div class="card">
-        <h3>📦 Logística simples</h3>
-        <p>Passo a passo para receber encomendas em Moçambique sem complicações.</p>
-      </div>
-    </section>
+<nav>
+<a href="#produtos">Produtos</a>
+<a href="#pagamento">Área de Pagamento</a>
+<a href="#sobre">Sobre Nós</a>
+</nav>
+</header>
 
-    <section id="pagamentos" class="payments" aria-labelledby="pagamentos-titulo">
-      <h2 id="pagamentos-titulo" style="margin:0 0 10px 0">💵 Formas de pagamento</h2>
+<section class="hero">
+<div class="hero-content">
+<h2>Produtos Originais Inuka</h2>
+<p>
+A melhor experiência em compras online com entrega rápida, segurança total,
+frete grátis e produtos importados diretamente da fábrica.
+</p>
 
-      <div class="pay-row">
-        <div class="pay-id">
-          <span class="pay-label">📱 M-Pesa</span>
-          <span id="mpesa-number" aria-label="Número M-Pesa">850 415 578</span>
-          <span class="note">— Alaita Miguel</span>
-        </div>
-        <div class="copy-group">
-          <button class="btn copy" data-copy="#mpesa-number">Copiar número</button>
-          <span class="copy-out" aria-live="polite" data-out="#mpesa-number"></span>
-        </div>
-      </div>
+<div class="hero-buttons">
+<a href="#produtos" class="btn btn-green">Comprar Agora</a>
+<a href="https://wa.me/258862583032?text=Entrei%20na%20vossa%20loja%20e%20não%20consegui%20fazer%20a%20compra,%20peço%20uma%20ajuda%20☺️" class="btn btn-green">Pedir Apoio</a>
+</div>
+</div>
+</section>
 
-      <div class="pay-row">
-        <div class="pay-id">
-          <span class="pay-label">📱 E-Mola</span>
-          <span id="emola-number" aria-label="Número E-Mola">862 583 032</span>
-          <span class="note">— Alcido Armando Daniel Mussilipo</span>
-        </div>
-        <div class="copy-group">
-          <button class="btn copy" data-copy="#emola-number">Copiar número</button>
-          <span class="copy-out" aria-live="polite" data-out="#emola-number"></span>
-        </div>
-      </div>
+<section class="trust">
+<div class="trust-card">
+<i class="fa-solid fa-truck-fast"></i>
+<h3>Frete Grátis</h3>
+<p>Entrega rápida e gratuita em todos os produtos.</p>
+</div>
 
-      <p class="note" style="margin-top:12px">🏢 Direitos: <strong>Mussilipo Investimento</strong></p>
+<div class="trust-card">
+<i class="fa-solid fa-shield-halved"></i>
+<h3>Proteção de Dados</h3>
+<p>Os seus dados são protegidos e seguros.</p>
+</div>
 
-      <div class="cta" style="margin-top:14px">
-        <button class="btn copy" data-copy-all="true">Copiar todos os dados</button>
-        <a class="btn primary" id="ctaWhatsApp2"
-           href="https://wa.me/258862583032?text=Ol%C3%A1!%20Tenho%20interesse%20no%20*Curso%20de%20Importa%C3%A7%C3%A3o*%20(agora%20pelo%20atual%201000Mt%20%que2%86%92%20antes%20500Mt).%20Pode%20enviar%20detalhes?"
-           target="_blank" rel="noopener">Enviar comprovativo no WhatsApp 📲</a>
+<div class="trust-card">
+<i class="fa-solid fa-award"></i>
+<h3>Produtos Originais</h3>
+<p>Produtos Inuka 100% autênticos e eficientes.</p>
+</div>
 
-        <!-- ✅ Novo botão aprimorado -->
-        <a class="btn email"
-           href="https://forms.gle/1Rb4SjSS4pBDmxor7"
-           target="_blank" 
-           rel="noopener">
-           Enviar comprovativo por Email
-        </a>
-      </div>
-    </section>
+<div class="trust-card">
+<i class="fa-solid fa-circle-check"></i>
+<h3>Garantia de Entrega</h3>
+<p>Garantimos a entrega do seu pedido.</p>
+</div>
+</section>
 
-    <footer>
-      <p>© <span id="year"></span> Curso de Importação — Todos os direitos reservados. Mussilipo Investimento.</p>
-    </footer>
-  </div>
+<section class="products" id="produtos">
+<h2 class="section-title">Nossos Produtos</h2>
 
-  <script>
-    // Copiar para área de transferência
-    const toast = document.getElementById("toast");
-    const showToast = (text="Copiado!") => {
-      toast.textContent = text;
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 1400);
-    };
-    function copyText(text, outEl){
-      if (!navigator.clipboard) {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select(); document.execCommand('copy');
-        document.body.removeChild(ta);
-      } else {
-        navigator.clipboard.writeText(text);
-      }
-      if (outEl) outEl.textContent = "✔ Copiado";
-      showToast("Copiado!");
-    }
-    document.querySelectorAll('button.btn.copy[data-copy]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const sel = btn.getAttribute('data-copy');
-        const target = document.querySelector(sel);
-        const outSel = btn.parentElement.querySelector('.copy-out');
-        const text = target ? target.textContent.replace(/\s+/g,' ').trim() : '';
-        copyText(text, outSel);
-      });
-    });
-    document.querySelectorAll('button.btn.copy[data-copy-all]').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const all = [
-          "M-Pesa: 850 415 578 — Alaita Miguel",
-          "E-Mola: 862 583 032 — Alcido Armando Daniel Mussilipo"
-        ].join(" | ");
-        copyText(all);
-      });
-    });
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<div class="product-grid">
+
+<div class="card">
+<div class="image-placeholder">ESPAÇO PARA FOTO DO PERFUME</div>
+<div class="card-content">
+<h3>Perfume Inuka</h3>
+<p class="price">1500 MZN</p>
+<p class="benefits">
+Perfume elegante, aroma duradouro e sofisticado.
+Ideal para o dia a dia e ocasiões especiais.
+</p>
+<div class="badges">
+<span class="badge">Frete Grátis</span>
+<span class="badge">Original</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Perfume Inuka',1500)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Perfume Inuka',1500)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-placeholder">ESPAÇO PARA FOTO DAS AMPOLAS</div>
+<div class="card-content">
+<h3>Ampolas Inuka</h3>
+<p class="price">250 MZN</p>
+<p class="benefits">
+Ajuda no fortalecimento capilar e revitalização dos fios.
+Resultados rápidos e eficientes.
+</p>
+<div class="badges">
+<span class="badge">Mais Vendido</span>
+<span class="badge">Original</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Ampolas Inuka',250)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Ampolas Inuka',250)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-placeholder">ESPAÇO PARA FOTO DO CREME</div>
+<div class="card-content">
+<h3>Creme Inuka</h3>
+<p class="price">1000 MZN</p>
+<p class="benefits">
+Hidratação profunda, pele macia e aparência saudável.
+</p>
+<div class="badges">
+<span class="badge">Qualidade Premium</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Creme Inuka',1000)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Creme Inuka',1000)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-placeholder">ESPAÇO PARA FOTO DO ÓLEO</div>
+<div class="card-content">
+<h3>Óleo Inuka</h3>
+<p class="price">1950 MZN</p>
+<p class="benefits">
+Óleo corporal e capilar com fórmula nutritiva e restauradora.
+</p>
+<div class="badges">
+<span class="badge">Importado</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Óleo Inuka',1950)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Óleo Inuka',1950)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-placeholder">ESPAÇO PARA FOTO DO AMBIENTALIZADOR</div>
+<div class="card-content">
+<h3>Ambientalizador de Carro</h3>
+<p class="price">1000 MZN</p>
+<p class="benefits">
+Deixa o seu carro perfumado e elegante durante semanas.
+</p>
+<div class="badges">
+<span class="badge">Super Aroma</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Ambientalizador',1000)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Ambientalizador',1000)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="image-placeholder">ESPAÇO PARA FOTO DA ÁGUA DE COLÓNIA</div>
+<div class="card-content">
+<h3>Água de Colónia</h3>
+<p class="price">1500 MZN</p>
+<p class="benefits">
+Fragrância suave e refrescante para todas as idades.
+</p>
+<div class="badges">
+<span class="badge">Longa Duração</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Água de Colónia',1500)">🛒 Add Carrinho</button>
+<button class="btn btn-green" onclick="buyNow('Água de Colónia',1500)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<div class="cart" onclick="toggleCart()">
+🛒
+</div>
+
+<div class="cart-panel" id="cartPanel">
+<h2>Seu Carrinho</h2>
+<div id="cartItems"></div>
+<p class="total">Total: <span id="total">0</span> MZN</p>
+
+<a class="btn btn-green" style="display:block;text-align:center;margin-bottom:15px;" href="https://wa.me/258862583032?text=Entrei%20na%20vossa%20loja%20e%20não%20consegui%20fazer%20a%20compra,%20peço%20uma%20ajuda%20☺️">
+Pedir Ajuda
+</a>
+
+<a class="btn btn-green" style="display:block;text-align:center;" href="#pagamento">
+Fazer Pagamento
+</a>
+</div>
+
+<section class="payment" id="pagamento">
+<h2 class="section-title">Área de Pagamento</h2>
+
+<div class="payment-box">
+<h3>Millennium BIM</h3>
+<p><strong>NIB:</strong> <span id="nib">000100000125122957957</span></p>
+<button class="copy-btn" onclick="copyText('nib')">Copiar NIB</button>
+
+<p><strong>Titular:</strong> Alcido Armando Daniel Mussilipo</p>
+
+<br><br>
+
+<h3>Emola</h3>
+<p><strong>Contacto:</strong> <span id="emola">862583032</span></p>
+<button class="copy-btn" onclick="copyText('emola')">Copiar Contacto</button>
+
+<p><strong>Titular:</strong> Alcido Armando Daniel Mussilipo</p>
+
+<br><br>
+
+<a class="btn btn-green" id="proofBtn" href="https://wa.me/258862583032?text=Fiz%20o%20pagamento%20do%20produto%20e%20espero%20o%20meu%20recebimento,%20obrigado%20🫂">
+Enviar Comprovativo
+</a>
+</div>
+</section>
+
+<section class="about" id="sobre">
+<h2 class="section-title">Sobre Nós</h2>
+<p>
+Somos uma empresa especializada em vendas de produtos pela internet e pelo mundo,
+fazemos entregas rápidas e eficientes.
+
+Estamos há mais de 5 anos operando em todo o mundo,
+entregando felicidade, qualidade e confiança.
+
+Agora em parceria com a Inuka,
+os nossos produtos são os mais eficientes do mercado e os mais originais que há.
+
+Importados diretamente da fábrica para o consumidor,
+a Mussilipo Investimentos traz qualidade, eficiência e confiança.
+
+Milhares de clientes satisfeitos já compraram conosco.
+A sua satisfação é a nossa prioridade.
+</p>
+</section>
+
+<footer>
+<p>© 2026 Direitos Reservados a Mussilipo Investimentos</p>
+</footer>
+
+<script>
+let cart = [];
+
+function toggleCart(){
+document.getElementById('cartPanel').classList.toggle('active');
+}
+
+function addToCart(name, price){
+let existing = cart.find(item => item.name === name);
+
+if(existing){
+existing.quantity++;
+}else{
+cart.push({name, price, quantity:1});
+}
+
+updateCart();
+alert(name + ' adicionado ao carrinho!');
+}
+
+function updateCart(){
+let cartItems = document.getElementById('cartItems');
+let total = 0;
+cartItems.innerHTML = '';
+
+cart.forEach(item => {
+let div = document.createElement('div');
+div.classList.add('cart-item');
+div.innerHTML = `
+<h3>${item.name}</h3>
+<p>Quantidade: ${item.quantity}</p>
+<p>Preço: ${item.price * item.quantity} MZN</p>
+`;
+cartItems.appendChild(div);
+
+total += item.price * item.quantity;
+});
+
+document.getElementById('total').innerText = total;
+
+let productNames = cart.map(item => item.name + ' x' + item.quantity).join(', ');
+
+document.getElementById('proofBtn').href =
+`https://wa.me/258862583032?text=Fiz%20o%20pagamento%20dos%20produtos:%20${encodeURIComponent(productNames)}%20e%20espero%20o%20meu%20recebimento,%20obrigado%20🫂`;
+}
+
+function buyNow(name, price){
+cart = [{name, price, quantity:1}];
+updateCart();
+window.location.href='#pagamento';
+}
+
+function copyText(id){
+let text = document.getElementById(id).innerText;
+navigator.clipboard.writeText(text);
+alert('Copiado: ' + text);
+}
+</script>
+
 </body>
-</html>
+  </html>
+  
