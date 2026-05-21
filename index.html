@@ -888,27 +888,200 @@ alert('Copiado: ' + text);
 
 </script>
 
-<!-- LOGIN MODAL -->
-<div id="loginModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;z-index:5000;">
-  <div style="background:white;padding:25px;border-radius:15px;width:90%;max-width:350px;">
-    <h2 style="color:#00a63e;margin-bottom:15px;">Login Cliente</h2>
-    <input id="userName" placeholder="Nome" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:8px;">
-    <input id="userNumber" placeholder="Número" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:8px;">
-    <button onclick="loginUser()" class="btn btn-green" style="width:100%;">Entrar</button>
-    <hr style="margin:15px 0;">
-    <input id="adminPass" placeholder="Senha Admin" type="password" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:8px;">
-    <button onclick="openAdmin()" class="btn btn-green" style="width:100%;background:#222;">Admin</button>
-  </div>
-</div>
-
-<!-- ADMIN PANEL -->
-<div id="adminPanel" style="display:none;position:fixed;inset:0;background:white;z-index:6000;overflow:auto;padding:20px;">
-  <h2 style="color:#00a63e;">Área Administrativa</h2>
-  <button onclick="closeAdmin()" class="btn btn-green">Fechar</button>
-  <h3 style="margin-top:20px;">Clientes</h3>
-  <div id="usersList"></div>
-  <h3 style="margin-top:20px;">Pedidos</h3>
-  <div id="ordersList"></div>
-</div>
-
 <script>
+
+let cart = [];
+let currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
+
+function toggleCart(){
+  document.getElementById('cartPanel').classList.toggle('active');
+}
+
+function addToCart(name, price){
+
+  let existing = cart.find(item => item.name === name);
+
+  if(existing){
+    existing.quantity++;
+  } else {
+    cart.push({name, price, quantity:1});
+  }
+
+  updateCart();
+  updateProofLink();
+}
+
+function increaseQuantity(index){
+  cart[index].quantity++;
+  updateCart();
+  updateProofLink();
+}
+
+function decreaseQuantity(index){
+  if(cart[index].quantity > 1){
+    cart[index].quantity--;
+  } else {
+    cart.splice(index,1);
+  }
+  updateCart();
+  updateProofLink();
+}
+
+function removeItem(index){
+  cart.splice(index,1);
+  updateCart();
+  updateProofLink();
+}
+
+function updateCart(){
+
+  let cartItems = document.getElementById('cartItems');
+  let total = 0;
+  let totalItems = 0;
+
+  cartItems.innerHTML = '';
+
+  cart.forEach((item,index)=>{
+
+    cartItems.innerHTML += `
+      <div class="cart-item">
+        <h3>${item.name}</h3>
+        <p>Preço: ${item.price * item.quantity} MZN</p>
+
+        <div class="quantity-controls">
+          <button class="qty-btn" onclick="decreaseQuantity(${index})">-</button>
+          <span>${item.quantity}</span>
+          <button class="qty-btn" onclick="increaseQuantity(${index})">+</button>
+        </div>
+
+        <button class="remove-btn" onclick="removeItem(${index})">Remover</button>
+      </div>
+    `;
+
+    total += item.price * item.quantity;
+    totalItems += item.quantity;
+
+  });
+
+  document.getElementById('total').innerText = total;
+  document.getElementById('cartCount').innerText = totalItems;
+}
+
+function updateProofLink(){
+
+  let productNames = cart.map(i => i.name + " x" + i.quantity).join(", ");
+
+  let msg = 'Já efetuei o pagamento do(s) produto(s): ' + productNames + '. Aguardarei pacientemente o meu recebimento!';
+
+  let btn = document.getElementById('proofBtn');
+  if(btn){
+    btn.href = 'https://wa.me/258862583032?text=' + encodeURIComponent(msg);
+  }
+}
+
+function buyNow(name,price){
+  cart = [{name,price,quantity:1}];
+  updateCart();
+  updateProofLink();
+  window.location.href='#pagamento';
+}
+
+function copyText(id){
+  let text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text);
+  alert('Copiado: ' + text);
+}
+
+function loginUser(){
+
+  let name = document.getElementById('userName').value;
+  let number = document.getElementById('userNumber').value;
+
+  if(!name || !number){
+    alert('Preenche nome e número');
+    return;
+  }
+
+  currentUser = {name, number};
+  localStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+  document.getElementById('loginModal').style.display = 'none';
+
+  alert('Login feito com sucesso, ' + name);
+}
+
+function renderUser(){
+  let header = document.querySelector('header .logo');
+  if(!header) return;
+
+  let old = document.getElementById('userGreeting');
+  if(old) old.remove();
+
+  if(currentUser){
+    let div = document.createElement('div');
+    div.id = 'userGreeting';
+    div.style.marginLeft = '15px';
+    div.style.color = '#00c853';
+    div.style.fontWeight = 'bold';
+    div.innerHTML = `Olá, ${currentUser.name} <button onclick="logoutUser()" style="margin-left:10px;background:red;color:white;border:none;padding:5px 10px;border-radius:8px;cursor:pointer;">Sair</button>`;
+    header.appendChild(div);
+  }
+}
+
+function logoutUser(){
+  currentUser = null;
+  localStorage.removeItem('currentUser');
+  renderUser();
+  alert('Terminaste sessão');
+}
+
+function requireLogin(){
+  if(!currentUser){
+    alert('Faz login primeiro');
+    document.getElementById('loginModal').style.display = 'flex';
+    return false;
+  }
+  return true;
+}
+
+// proteger compra
+let oldAddToCart = addToCart;
+addToCart = function(name, price){
+  if(!requireLogin()) return;
+  oldAddToCart(name, price);
+};
+
+let oldBuyNow = buyNow;
+buyNow = function(name, price){
+  if(!requireLogin()) return;
+  oldBuyNow(name, price);
+};
+
+// atualizar login para renderizar
+let oldLogin = loginUser;
+loginUser = function(){
+  let name = document.getElementById('userName').value;
+  let number = document.getElementById('userNumber').value;
+
+  if(!name || !number){
+    alert('Preenche nome e número');
+    return;
+  }
+
+  currentUser = {name, number};
+  localStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+  document.getElementById('loginModal').style.display = 'none';
+
+  renderUser();
+  alert('Login feito com sucesso, ' + name);
+};
+
+// carregar ao abrir
+renderUser();
+
+</script>
+
+</body>
+</html>
+</html>
