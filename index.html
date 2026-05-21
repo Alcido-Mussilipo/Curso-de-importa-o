@@ -426,7 +426,7 @@ padding:100px 20px 50px;
 
 <header>
 <div class="logo">
-<img src="foto.jpg" class="logo-img">
+<img src="foto.png" class="logo-img">
 <h1>Mussilipo Shop</h1>
 </div>
 
@@ -581,7 +581,7 @@ segurança total e produtos de alta qualidade.
 </div>
 
 <div class="card">
-<img src="patins.jpg" class="product-img">
+<img src="Patins.jpg" class="product-img">
 <div class="card-content">
 <h3>Patins 3 Rodas</h3>
 <p class="price">9000 MZN</p>
@@ -598,7 +598,7 @@ segurança total e produtos de alta qualidade.
 </div>
 
 <div class="card">
-<img src="crianca.jpg" class="product-img">
+<img src="Crianca.jpg" class="product-img">
 <div class="card-content">
 <h3>Patins Infantil Inline</h3>
 <p class="price">2500 MZN</p>
@@ -614,7 +614,7 @@ segurança total e produtos de alta qualidade.
 </div>
 
 <div class="card">
-<img src="adulto.jpg" class="product-img">
+<img src="Adulto.jpg" class="product-img">
 <div class="card-content">
 <h3>Patins Inline Adulto</h3>
 <p class="price">4500 MZN</p>
@@ -646,7 +646,7 @@ segurança total e produtos de alta qualidade.
 </div>
 
 <div class="card">
-<img src="conjunto.jpg" class="product-img">
+<img src="Conjunto.jpg" class="product-img">
 <div class="card-content">
 <h3>Conjunto Estiloso</h3>
 <p class="price">5250 MZN</p>
@@ -663,7 +663,7 @@ segurança total e produtos de alta qualidade.
 </div>
 
 <div class="card">
-<img src="medio.jpg" class="product-img">
+<img src="Medio.jpg" class="product-img">
 <div class="card-content">
 <h3>Conjunto Médio</h3>
 <p class="price">3750 MZN</p>
@@ -674,6 +674,23 @@ segurança total e produtos de alta qualidade.
 <div class="card-buttons">
 <button class="btn btn-green" onclick="addToCart('Conjunto Médio',3750)">🛒 Adicionar</button>
 <button class="btn btn-green" onclick="buyNow('Conjunto Médio',3750)">Pagar Agora</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<img src="Sapato.jpg" class="product-img">
+<div class="card-content">
+<h3>Sapatos Exclusivos</h3>
+<p class="price">1950 MZN</p>
+<p class="benefits">Sapatos importados com conforto e qualidade.</p>
+<div class="badges">
+<span class="badge">Importado</span>
+<span class="badge">Exclusivo</span>
+</div>
+<div class="card-buttons">
+<button class="btn btn-green" onclick="addToCart('Sapatos Exclusivos',1950)">🛒 Adicionar</button>
+<button class="btn btn-green" onclick="buyNow('Sapatos Exclusivos',1950)">Pagar Agora</button>
 </div>
 </div>
 </div>
@@ -696,23 +713,6 @@ Para ocasiões casuais, ideal para homens que gostam de marcar a diferença no a
 </div>
 </div>
 </div>
- 
-<div class="card">
-<img src="Sapato.jpg" class="product-img">
-<div class="card-content">
-<h3>Sapatos Exclusivos</h3>
-<p class="price">1950 MZN</p>
-<p class="benefits">Sapatos importados com conforto e qualidade.</p>
-<div class="badges">
-<span class="badge">Importado</span>
-<span class="badge">Exclusivo</span>
-</div>
-<div class="card-buttons">
-<button class="btn btn-green" onclick="addToCart('Sapatos Exclusivos',1950)">🛒 Adicionar</button>
-<button class="btn btn-green" onclick="buyNow('Sapatos Exclusivos',1950)">Pagar Agora</button>
-</div>
-</div>
-</div>
 
 </div>
 </section>
@@ -723,6 +723,7 @@ Para ocasiões casuais, ideal para homens que gostam de marcar a diferença no a
 </div>
 
 <div class="cart-panel" id="cartPanel">
+<button style="position:absolute;top:10px;left:10px;background:#00c853;color:white;border:none;padding:8px 12px;border-radius:10px;font-size:18px;cursor:pointer;" onclick="toggleCart()">›</button>
 <h2>Seu Carrinho</h2>
 <div id="cartItems"></div>
 <p class="total">Total: <span id="total">0</span> MZN</p>
@@ -740,18 +741,16 @@ Fazer Pagamento
 <h3>Millennium BIM</h3>
 <p><strong>NIB:</strong> <span id="nib">000100000125122957957</span></p>
 <button class="copy-btn" onclick="copyText('nib')">Copiar NIB</button>
-<p><strong>Titular:</strong> Alcido Armando Daniel Mussilipo</p>
- 
+
 <br><br>
 
 <h3>Emola</h3>
 <p><strong>Contacto:</strong> <span id="emola">862583032</span></p>
 <button class="copy-btn" onclick="copyText('emola')">Copiar Contacto</button>
-<p><strong>Titular:</strong> Alcido Armando Daniel Mussilipo</p>
- 
+
 <br><br>
 
-<a class="btn btn-green" id="proofBtn" href="#">
+<a class="btn btn-green" href="https://wa.me/258862583032">
 Enviar Comprovativo
 </a>
 
@@ -763,8 +762,7 @@ Enviar Comprovativo
 <p>
 Somos especializados em vendas online,
 trazendo produtos originais,
-qualidade premium e atendimento confiável. com parceria direta com a Inuka com produtos de primeira linha e qualidade eficiente, associados a várias empresas de produtos, sempre mantendo a qualidade e confiança.
- Nesta empresa o cliente é que manda, peça que nós entregamos.
+qualidade premium e atendimento confiável.
 </p>
 </section>
 
@@ -820,13 +818,6 @@ let cartItems = document.getElementById('cartItems');
 let total = 0;
 let totalItems = 0;
 
-let productNames = cart.map(item => item.name + ' x' + item.quantity).join(', ');
-
-document.getElementById('proofBtn').href =
-`https://wa.me/258862583032?text=${encodeURIComponent(
-'Já efetuei o pagamento do(s) produto(s): ' + productNames + '. Aguardarei pacientemente o meu recebimento!'
-)}`;
- 
 cartItems.innerHTML = '';
 
 cart.forEach((item,index)=>{
@@ -897,5 +888,27 @@ alert('Copiado: ' + text);
 
 </script>
 
-</body>
-</html>
+<!-- LOGIN MODAL -->
+<div id="loginModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.7);display:flex;justify-content:center;align-items:center;z-index:5000;">
+  <div style="background:white;padding:25px;border-radius:15px;width:90%;max-width:350px;">
+    <h2 style="color:#00a63e;margin-bottom:15px;">Login Cliente</h2>
+    <input id="userName" placeholder="Nome" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:8px;">
+    <input id="userNumber" placeholder="Número" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:8px;">
+    <button onclick="loginUser()" class="btn btn-green" style="width:100%;">Entrar</button>
+    <hr style="margin:15px 0;">
+    <input id="adminPass" placeholder="Senha Admin" type="password" style="width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:8px;">
+    <button onclick="openAdmin()" class="btn btn-green" style="width:100%;background:#222;">Admin</button>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" style="display:none;position:fixed;inset:0;background:white;z-index:6000;overflow:auto;padding:20px;">
+  <h2 style="color:#00a63e;">Área Administrativa</h2>
+  <button onclick="closeAdmin()" class="btn btn-green">Fechar</button>
+  <h3 style="margin-top:20px;">Clientes</h3>
+  <div id="usersList"></div>
+  <h3 style="margin-top:20px;">Pedidos</h3>
+  <div id="ordersList"></div>
+</div>
+
+<script>
