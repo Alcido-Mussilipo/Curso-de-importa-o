@@ -751,7 +751,7 @@ Fazer Pagamento
  
 <br><br>
 
-<a class="btn btn-green" href="https://wa.me/258862583032">
+<a class="btn btn-green" id="proofBtn" href="#">
 Enviar Comprovativo
 </a>
 
@@ -820,6 +820,13 @@ let cartItems = document.getElementById('cartItems');
 let total = 0;
 let totalItems = 0;
 
+let productNames = cart.map(item => item.name + ' x' + item.quantity).join(', ');
+
+document.getElementById('proofBtn').href =
+`https://wa.me/258862583032?text=${encodeURIComponent(
+'Já efetuei o pagamento do(s) produto(s): ' + productNames + '. Aguardarei pacientemente o meu recebimento!'
+)}`;
+ 
 cartItems.innerHTML = '';
 
 cart.forEach((item,index)=>{
